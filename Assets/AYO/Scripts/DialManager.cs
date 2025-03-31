@@ -15,11 +15,6 @@ namespace AYO
         [SerializeField] private Text dialogueLine;
         [SerializeField] private Image characterImage;
 
-        // Start is called before the first frame update
-        void Start()
-        {
-            
-        }
 
         // npcData = GetComponent<NPCData>();  >> 어떻게 가져올것인지?
         // lines의 첫번째 줄을 저장하는 변수를 만들 필요 X !!

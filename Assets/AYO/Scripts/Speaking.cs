@@ -6,26 +6,33 @@ namespace AYO
 {
     public class Speaking : MonoBehaviour
     {
-        public string characterName;
-        public string lineID;
-        public List<string> lines;
-        public Sprite sprite;
+        private string characterName;
+        private string lineID;
+        private List<string> lines = new List<string>();
+        private Sprite sprite;
 
-        public Speaking(string characterName, string lineID, List<string> lines, Sprite sprite)
+        private DialogueTableLoader tableLoader;
+
+        private void Start()
         {
-            this.characterName = characterName;
-            this.lineID = lineID;
-            this.lines = lines;
-            this.sprite = sprite;
+            tableLoader = GetComponent<DialogueTableLoader>();
         }
 
+        // 발화 생성
         public void CurrentSpeaking(string characterName, string lineID, List<string> lines, Sprite sprite)
         {
             this.characterName = characterName;
             this.lineID = lineID;
-            this.lines = lines;
+            this.lines = tableLoader.GetDialogueData(lineID);
             this.sprite = sprite;
         }
 
+        // 캐릭터 정보 가져오기
+        public void GetCharacterData(CharacterData character)
+        {
+            character.characterName = characterName;
+            character.characterSprite = sprite;
+            character.lineID = lineID;
+        }
     }
 }
