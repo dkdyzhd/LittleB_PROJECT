@@ -43,19 +43,13 @@ namespace AYO
                     dialogueDictionary[currentLineID].Add(line);
                 }
 
+                // 다음 줄 읽고 while문 종료 ( while문 돌 때 다음 줄을 저장하기 위함 )
                 readline = sr.ReadLine();
-                // lineID 가 비어있지 않고 다를때
-
-
-                // LN010100,으으... 바람 때문에 털이 엉망이 됐어.
-
-                // ,바람산은 이름만 바람산이 아니구나…
-
-                // LN010199,나는 아직 정식 연구원은 아니지만. 아는 만큼은 대답해줄게.
+                
             }
         }
 
-        public List<string> GetDialogueData(string lineID)
+        public List<string> GetDialogueData(string lineID)  // lineID를 통해 List 불러오는 함수
         {
             return dialogueDictionary[lineID];
         }

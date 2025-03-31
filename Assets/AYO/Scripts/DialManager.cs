@@ -6,12 +6,14 @@ namespace AYO
 {
     public class DialManager : MonoBehaviour
     {
-        private NPCData npcData;
+        private CharacterData characterData;
         private string currentLineID = "LN010100";
         private int i = -1; // i를 계속 초기화 해줘야함
-
+        
+        [SerializeField] private DialogueUI dialogueUI;
         [SerializeField] private DialogueTableLoader tableLoader;
         [SerializeField] private Text dialogueLine;
+        [SerializeField] private Image characterImage;
 
         // Start is called before the first frame update
         void Start()
