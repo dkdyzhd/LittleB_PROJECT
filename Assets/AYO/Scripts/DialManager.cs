@@ -9,12 +9,20 @@ namespace AYO
         private CharacterData characterData;
         private string currentLineID = "LN010100";
         private int i = -1; // i를 계속 초기화 해줘야함
-        
-        [SerializeField] private DialogueUI dialogueUI;
+
+        //[SerializeField] private DialogueUI dialogueUI;
+        [SerializeField] private GameObject dialogueUI;
         [SerializeField] private DialogueTableLoader tableLoader;
         [SerializeField] private Text dialogueLine;
         [SerializeField] private Image characterImage;
 
+        private Speaking speaking;
+        private SpeakingData speakingData;
+
+        private void Start()
+        {
+            dialogueUI.SetActive(false);
+        }
 
         // npcData = GetComponent<NPCData>();  >> 어떻게 가져올것인지?
         // lines의 첫번째 줄을 저장하는 변수를 만들 필요 X !!
@@ -22,8 +30,9 @@ namespace AYO
         public void ShowDialogue()
         {
             // npcData = GetComponent<NPCData>();  >> 어떻게 가져올것인지?
-            List<string> lines = tableLoader.GetDialogueData(currentLineID);
-            if(i < lines.Count - 1)
+            // List<string> lines = tableLoader.GetDialogueData(currentLineID);
+            List<string> lines = speakingData.lines;    //테스트해봐야함
+            if (i < lines.Count - 1)
             {
                 i++;
                 dialogueLine.text = lines[i];
@@ -32,6 +41,8 @@ namespace AYO
 
         public void StartDialogue()
         {
+            speaking.CurrentSpeaking(characterData);    // 테스트해봐야함
+            dialogueUI.SetActive(true);
             if (Input.GetKeyDown(KeyCode.Return))
             {
                 Debug.Log("입력");

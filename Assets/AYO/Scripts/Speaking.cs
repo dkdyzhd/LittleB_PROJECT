@@ -4,35 +4,67 @@ using UnityEngine;
 
 namespace AYO
 {
-    public class Speaking : MonoBehaviour
+    public class SpeakingData
     {
-        private string characterName;
-        private string lineID;
-        private List<string> lines = new List<string>();
-        private Sprite sprite;
+        public string characterName;   // 캐릭터이름 "미오"
+        public string lineID;          // 대사를 불러오기 위한 lineID "LN010100"
+        public List<string> lines = new List<string>();    // 대사리스트
+        public Sprite sprite;          // 캐릭터 초상화
+
+        // 클래스 생성자
+        public SpeakingData(string characterName, string lineID, List<string> lines, Sprite sprite)
+        {
+            this.characterName = characterName;
+            this.lineID = lineID;
+            this.lines = lines;
+            this.sprite = sprite;
+        }
+    }
+
+    public class Speaking : MonoBehaviour
+    {// 클래스이름 변경하기 - 담당하고 있는 역할을 잘 알아보도록
+        
+        //private string characterName;   // 캐릭터이름 "미오"
+        //private string lineID;          // 대사를 불러오기 위한 lineID "LN010100"
+        //private List<string> lines = new List<string>();    // 대사리스트
+        //private Sprite sprite;          // 캐릭터 초상화
 
         private DialogueTableLoader tableLoader;
+
+        private List<SpeakingData> speakingData = new List<SpeakingData>();
 
         private void Start()
         {
             tableLoader = GetComponent<DialogueTableLoader>();
         }
 
-        // 발화 생성
-        public void CurrentSpeaking(string characterName, string lineID, List<string> lines, Sprite sprite)
+
+        public void CurrentSpeaking(CharacterData character)
         {
-            this.characterName = characterName;
-            this.lineID = lineID;
-            this.lines = tableLoader.GetDialogueData(lineID);
-            this.sprite = sprite;
+            // 발화 생성
+            SpeakingData speakingData = new SpeakingData(
+                character.characterName, 
+                character.lineID, 
+                tableLoader.GetDialogueData(character.lineID), 
+                character.characterSprite
+                );
         }
 
+        // 발화 생성
+        //public void CurrentSpeaking(string characterName, string lineID, List<string> lines, Sprite sprite)
+        //{
+        //    this.characterName = characterName;
+        //    this.lineID = lineID;
+        //    this.lines = tableLoader.GetDialogueData(lineID);
+        //    this.sprite = sprite;
+        //}
+
         // 캐릭터 정보 가져오기
-        public void GetCharacterData(CharacterData character)
-        {
-            character.characterName = characterName;
-            character.characterSprite = sprite;
-            character.lineID = lineID;
-        }
+        //public void GetCharacterData(CharacterData character)
+        //{
+        //    character.characterName = characterName;
+        //    character.characterSprite = sprite;
+        //    character.lineID = lineID;
+        //}
     }
 }
