@@ -163,7 +163,7 @@ namespace AYO
         private void UpdateSprite()
         {
          
-             Debug.Log($"isGrounded: {isGrounded}, velocityY: {rb.velocity.y}, isJumping: {isJumping}");
+             //Debug.Log($"isGrounded: {isGrounded}, velocityY: {rb.velocity.y}, isJumping: {isJumping}");
 
             // 만약 땅에서 떨어져있다면(점프 상태) => 상승/최고점/낙하 스프라이트
             if (!isGrounded)

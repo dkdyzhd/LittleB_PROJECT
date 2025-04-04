@@ -8,7 +8,6 @@ namespace AYO
     public class CharacterData : ScriptableObject
     {
         public string characterName;
-        public string lineID;
         public Sprite characterSprite;
     }
 }
