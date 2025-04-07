@@ -32,7 +32,7 @@ namespace AYO
         // 반복문을 사용하는 대신 함수에 i++ & Enter 를 누를때마다 실행되도록
         public void ShowDialogue()
         {
-            currentSpeaking = speakingArray.GetSpeaking(j);
+            currentSpeaking = speakingArray.GetSpeaking(j);     //.상호작용하고 있는 대상과의 대화가 나오는 것인가?
             //List<string> lines = tableLoader.GetDialogueData(currentSpeaking.GetID()); 
             lines = tableLoader.GetDialogueData(currentSpeaking.GetID());
 
@@ -53,6 +53,8 @@ namespace AYO
                 j++;
                 i = 0;
                 ShowDialogue();
+
+                // To do : 배열이 끝나면 UI 비활성화 > j 사용
             }
         }
 
