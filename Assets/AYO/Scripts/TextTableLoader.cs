@@ -4,20 +4,27 @@ using UnityEngine;
 
 namespace AYO
 {
-    public class DialogueTableLoader : MonoBehaviour
+    public class TextTableLoader : MonoBehaviour
     {
         [SerializeField] private TextAsset dialogueTable;
+        [SerializeField] private TextAsset choiceTable;
 
         private Dictionary<string, List<string>> dialogueDictionary = new Dictionary<string, List<string>>();
 
         // Start is called before the first frame update
         void Start()
         {
-            StringReader sr = new StringReader(dialogueTable.text);
+            LoadTextTable(dialogueTable);
+            LoadTextTable(choiceTable);   
+        }
+
+        public void LoadTextTable(TextAsset textAsset)
+        {
+            StringReader sr = new StringReader(textAsset.text);
             string readline = sr.ReadLine();
             string currentLineID = string.Empty;
 
-            while(!string.IsNullOrEmpty(readline))
+            while (!string.IsNullOrEmpty(readline))
             {
                 string[] data = readline.Split(',');
                 string lineID = data[0];
@@ -45,11 +52,11 @@ namespace AYO
 
                 // 다음 줄 읽고 while문 종료 ( while문 돌 때 다음 줄을 저장하기 위함 )
                 readline = sr.ReadLine();
-                
+
             }
         }
 
-        public List<string> GetDialogueData(string lineID)  // lineID를 통해 List 불러오는 함수
+        public List<string> GetTextData(string lineID)  // lineID를 통해 List 불러오는 함수
         {
             return dialogueDictionary[lineID];
         }

@@ -10,7 +10,7 @@ namespace AYO
 
         //[SerializeField] private DialogueUI dialogueUI;
         [SerializeField] private SpeakingArray speakingArray;
-        [SerializeField] private DialogueTableLoader tableLoader;
+        [SerializeField] private TextTableLoader tableLoader;
         [SerializeField] private GameObject dialogueUI;
         [SerializeField] private Text dialogueLine;
         [SerializeField] private Image characterImage;
@@ -25,6 +25,7 @@ namespace AYO
         private void Start()
         {
             dialogueUI.SetActive(false);
+            
         }
 
         // npcData = GetComponent<NPCData>();  >> 어떻게 가져올것인지?
@@ -34,7 +35,7 @@ namespace AYO
         {
             currentSpeaking = speakingArray.GetSpeaking(j);     //.상호작용하고 있는 대상과의 대화가 나오는 것인가?
             //List<string> lines = tableLoader.GetDialogueData(currentSpeaking.GetID()); 
-            lines = tableLoader.GetDialogueData(currentSpeaking.GetID());
+            lines = tableLoader.GetTextData(currentSpeaking.GetID());
 
             dialogueLine.text = lines[i];
 
@@ -52,9 +53,16 @@ namespace AYO
             {
                 j++;
                 i = 0;
+                // 배열이 끝나면 UI 비활성화 > j 사용
+                if(j >= speakingArray.GetArrayLength())
+                {
+                    dialogueUI.SetActive(false);
+                    speakingArray.InvokeNextEvent();
+                    return;
+                }
+
                 ShowDialogue();
 
-                // To do : 배열이 끝나면 UI 비활성화 > j 사용
             }
         }
 

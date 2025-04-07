@@ -16,7 +16,7 @@ namespace AYO
         [Header("🎯 실행할 애니메이션 이름")]
         [SerializeField] private string animationTriggerName = "Open";
 
-        [SerializeField] private DialogueTableLoader tableLoader;
+        [SerializeField] private TextTableLoader tableLoader;
 
         private bool isActivated = false;
 

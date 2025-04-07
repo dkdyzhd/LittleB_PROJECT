@@ -9,7 +9,7 @@ namespace AYO
     {
         [SerializeField] private Text dialogueLine;
 
-        [SerializeField] private DialogueTableLoader dialogueTableLoader;
+        [SerializeField] private TextTableLoader dialogueTableLoader;
 
         // Start is called before the first frame update
         void Start()
