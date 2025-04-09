@@ -35,7 +35,7 @@ namespace AYO
         {
             currentSpeaking = speakingArray.GetSpeaking(j);     //.상호작용하고 있는 대상과의 대화가 나오는 것인가?
             //List<string> lines = tableLoader.GetDialogueData(currentSpeaking.GetID()); 
-            lines = tableLoader.GetTextData(currentSpeaking.GetID());
+            lines = tableLoader.GetTextData(currentSpeaking.GetSpeakingID());
 
             dialogueLine.text = lines[i];
 

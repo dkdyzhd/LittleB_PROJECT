@@ -90,7 +90,7 @@ namespace AYO
         [SerializeField] private CharacterData characterData;
         [SerializeField] private string id;
 
-        public string GetID()
+        public string GetSpeakingID()
         {
             return id;
         }
