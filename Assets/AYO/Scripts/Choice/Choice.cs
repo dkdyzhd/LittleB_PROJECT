@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 namespace AYO
 {
-    [System.Serializable]   //MonoBehaviour 를 안쓰는 대신에 유니티상에서 보여주기 위한 직렬화(?)
+    [System.Serializable]   //MonoBehaviour 를 안쓰는 대신에 유니티상에서 보여주기 위한 직렬화
     public class Choice 
     {
 

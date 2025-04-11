@@ -14,7 +14,7 @@ namespace AYO
         [SerializeField] private float speed = 3f;
 
         // 대화 시스템
-        private DialogueManager dialogueManager;
+        //private DialogueManager dialogueManager;
 
         // 컴포넌트
         private Rigidbody2D rb;
@@ -41,17 +41,17 @@ namespace AYO
             rb = GetComponent<Rigidbody2D>();
             sp = GetComponent<SpriteRenderer>();
             ani = GetComponent<Animator>();
-            dialogueManager = FindObjectOfType<DialogueManager>();
+            //dialogueManager = FindObjectOfType<DialogueManager>();
         }
 
         private void Update()
         {
             // 대화 중이면 이동과 스프라이트 갱신 중단
-            if (dialogueManager.IsConversationActive)
-            {
-                rb.velocity = new Vector2(0, rb.velocity.y);
-                return;
-            }
+            //if (dialogueManager.IsConversationActive)
+            //{
+            //    rb.velocity = new Vector2(0, rb.velocity.y);
+            //    return;
+            //}
 
             HandleJump();    
             UpdateSprite();  
@@ -60,8 +60,8 @@ namespace AYO
         private void FixedUpdate()
         {
             // 대화 중이면 이동 중단
-            if (dialogueManager.IsConversationActive)
-                return;
+            //if (dialogueManager.IsConversationActive)
+            //    return;
 
             CheckGrounded();  // 땅에 닿았는지 확인
 

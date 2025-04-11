@@ -9,12 +9,28 @@ namespace AYO
     {
         [SerializeField] private TextTableLoader tableLoader;
         [SerializeField] private GameObject choiceUI;
-        [SerializeField] private Text choiceText;
+        [SerializeField] private Text characterName;
         [SerializeField] private Image characterImage;
+        [SerializeField] private GameObject choiceButtonPrefab;
+        [SerializeField] private Transform choiceListPanel;    //UI아이템 목록이 들어갈 부모 오브젝트
 
         private Choice choice;
         private string text;
         private string id;
+
+        private void Start()
+        {
+            // 선택지 UI 비활성화
+            choiceUI.SetActive(false);
+        }
+
+        public void CreateChoiceButton()
+        {
+            GameObject choiceButton = Instantiate(choiceButtonPrefab, choiceListPanel);
+            Text choiceText = choiceButton.GetComponentInChildren<Text>();
+            Button button = choiceButton.GetComponent<Button>();
+            // button.onClick.AddListener(() => );
+        }
 
         public void ShowChoice()
         {
