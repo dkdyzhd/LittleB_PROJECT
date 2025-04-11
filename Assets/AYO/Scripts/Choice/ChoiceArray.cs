@@ -9,5 +9,10 @@ namespace AYO
 
         [SerializeField] private Choice[] choiceArray;
         [SerializeField] private CharacterData characterData;
+
+        public Choice GetChoice(int i)
+        {
+            return choiceArray[i];
+        }
     }
 }

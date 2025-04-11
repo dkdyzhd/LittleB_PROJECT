@@ -13,6 +13,13 @@ namespace AYO
         [SerializeField] private string choiceID;
         [SerializeField] private UnityEvent nextEvent;
 
+        public bool ChoiceCondition()
+        {
+            if (condition.Invoke())   // 왜 리턴이 bool 인 클래스를 상속받는데 안되는지? 
+                return true;            // >> condition은 함수를 저장하는 공간-> 함수 실행결과로 따져야함
+
+            return false;
+        }
         public string GetChoiceID()
         {
             return choiceID;
