@@ -21,6 +21,7 @@ namespace AYO
         public void SetButton(string buttonText, UnityEvent buttonEvent)
         {
             text.text = buttonText;
+            button.onClick.AddListener(() => buttonEvent.Invoke());
         }
     }
 }

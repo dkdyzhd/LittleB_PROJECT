@@ -78,13 +78,17 @@ namespace AYO
 
         public void EndDialogue()
         {
-            dialogueUI.SetActive(false);
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                dialogueUI.SetActive(false);
+            }
         }
 
         // Update is called once per frame
         void Update()
         {
             ReadLine();
+            EndDialogue();
         }
     }
 }

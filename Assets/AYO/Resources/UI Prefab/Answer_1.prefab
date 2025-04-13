@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 5959035695572180426}
-  button: {fileID: 0}
+  button: {fileID: 6133483711281650616}
 --- !u!1 &8937222051357442809
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,4 +214,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "1 \uBC88 \uC120\uD0DD\uC9C0"
+  m_Text: "\uB300\uD654 \uB9C8\uCE58\uAE30"

@@ -31,6 +31,11 @@ namespace AYO
             choiceUI.SetActive(false);
         }
 
+        private void Update()
+        {
+            EndChoice();
+        }
+
         // 선택지 목록을 받아오는 함수 >  플레이어/npc에게서 받아옴
         public void GetChoiceArray(ChoiceArray choiceArray)
         {
@@ -53,6 +58,14 @@ namespace AYO
             }
 
             choiceUI.SetActive(true);
+        }
+
+        public void EndChoice()
+        {
+            if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                choiceUI.SetActive(false);
+            }
         }
 
         public void ShowChoice()
