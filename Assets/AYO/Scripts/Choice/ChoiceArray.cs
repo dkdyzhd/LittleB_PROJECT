@@ -14,5 +14,15 @@ namespace AYO
         {
             return choiceArray[i];
         }
+
+        public int GetChoiceCount()
+        {
+            return choiceArray.Length;
+        }
+
+        public CharacterData GetCharacterData()
+        {
+            return characterData;
+        }
     }
 }

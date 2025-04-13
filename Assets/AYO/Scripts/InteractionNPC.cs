@@ -8,12 +8,16 @@ namespace AYO
     {
         [SerializeField] private CharacterData characterData;
         [SerializeField] private DialManager dialManager;
-        [SerializeField] private Speaking speaking;
+        [SerializeField] private Speaking npcSpeaking;
+        [SerializeField] private ChoiceManager choiceManager;
+        [SerializeField] private ChoiceArray npcChoiceArray;
 
         public void OnInteract()
         {
-            //speaking.SetNPC(this);
+            // 대화 시작
             dialManager.StartDialogue();
+            // npc가 가지고 있는 선택지 전달
+            choiceManager.GetChoiceArray(npcChoiceArray);
         }
 
         public CharacterData GetCharacterData()

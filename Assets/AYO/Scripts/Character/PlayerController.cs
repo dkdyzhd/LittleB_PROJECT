@@ -216,7 +216,7 @@ namespace AYO
             Gizmos.color = Color.red;
             Gizmos.DrawWireCube(groundCheckPosition, boxSize);
         }
-        public bool HasItem(NPCInteract npc)
+        public bool HasItem(CharacterData characterData)
         {
             // 아이템이 있는지 확인하는 코드
             return true;

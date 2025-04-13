@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 
 namespace AYO
@@ -15,6 +16,11 @@ namespace AYO
         {
             text = GetComponentInChildren<Text>();
             button = GetComponent<Button>();
+        }
+
+        public void SetButton(string buttonText, UnityEvent buttonEvent)
+        {
+            text.text = buttonText;
         }
     }
 }

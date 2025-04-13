@@ -57,6 +57,7 @@ namespace AYO
                 if(j >= speakingArray.GetArrayLength())
                 {
                     dialogueUI.SetActive(false);
+                    // 다음 이벤트 호출하면서  대화 종료
                     speakingArray.InvokeNextEvent();
                     return;
                 }

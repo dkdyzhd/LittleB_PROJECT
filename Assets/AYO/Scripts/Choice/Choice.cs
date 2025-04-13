@@ -29,5 +29,10 @@ namespace AYO
         {
             nextEvent.Invoke();
         }
+
+        public UnityEvent NextEvent()
+        {
+            return nextEvent;
+        }
     }
 }
