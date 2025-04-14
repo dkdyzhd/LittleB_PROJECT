@@ -11,29 +11,35 @@ namespace AYO
     {
         [SerializeField] private Text speaker;
         [SerializeField] private Image characterImage;
-        [SerializeField] private GameObject choiceButtonPrefab;
-        [SerializeField] private Transform choiceListPanel;    //UI아이템 목록이 들어갈 부모 오브젝트
-        [SerializeField] private ButtonUI buttonUI;
+        [SerializeField] private ButtonUI[] buttonUIArray;
 
-        public void CreateChoiceButton()
+        private void Start()
         {
-            GameObject choiceButton = Instantiate(choiceButtonPrefab, choiceListPanel);
+            
+        }
 
-            //Text choiceText = choiceButton.GetComponentInChildren<Text>();
-            //Button button = choiceButton.GetComponent<Button>();
-            // To do : 선택지가 가지고 있는 이벤트를 버튼 onClick으로 대입?
-            // button.onClick.AddListener(() => );
-            // 버튼 안에 있는 텍스트와 이벤트를 바꿔줘야 함.> 어떻게?
-        }   // 버튼UI 클래스 따로 만들기 >  텍스트 & 이벤트 받아오는 기능 만들기
-
-        public void SetChoiceArrayData(Sprite characterSprite, string characterName, string choiceText, UnityEvent choiceEvent)
+        // 누가 가진 선택지 인지 세팅
+        public void SetChoiceCharacter(Sprite characterSprite, string characterName)
         {
             characterImage.sprite = characterSprite;    // 이미지 안에 있는 sprite를 바꿔주는 것
             speaker.text = characterName;
-            buttonUI.SetButton(choiceText, choiceEvent);
-            //buttonUI.text.text = choiceText;
-            //buttonUI.button.onClick.AddListener(() => );
-
         }
+
+        // 몇 번 째 버튼에 데이터를 넣어줄 것인지 
+        public void SetButtonData(int j, string choiceText, UnityEvent choiceEvent)
+        {
+            buttonUIArray[j].SetButton(choiceText, choiceEvent);
+            buttonUIArray[j].gameObject.SetActive(true);
+        }
+
+        //[SerializeField] private Transform choiceListPanel;    //UI아이템 목록이 들어갈 부모 오브젝트
+        //[SerializeField] private GameObject choiceButtonPrefab;
+        // 버튼을 미리 만들어서 사용할 것이기 때문에 주석처리 > 선택지의 갯수의 변동폭이 넓지 않아서
+        //public GameObject CreateChoiceButton()
+        //{
+        //    GameObject choiceButton = Instantiate(choiceButtonPrefab, choiceListPanel);
+        //    return choiceButton;
+        //}   
+
     }
 }

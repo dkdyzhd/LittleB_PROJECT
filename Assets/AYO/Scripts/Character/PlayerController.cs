@@ -221,5 +221,10 @@ namespace AYO
             // 아이템이 있는지 확인하는 코드
             return true;
         }
+
+        public bool NotHasItem()
+        {
+            return false;
+        }
     }
 }
