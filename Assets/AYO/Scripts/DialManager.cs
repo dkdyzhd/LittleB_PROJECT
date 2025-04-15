@@ -47,6 +47,7 @@ namespace AYO
             {
                 i++;
                 dialogueLine.text = lines[i];
+                return;
             }
 
             if (Input.GetKeyDown(KeyCode.Return) && i >= lines.Count -1)
