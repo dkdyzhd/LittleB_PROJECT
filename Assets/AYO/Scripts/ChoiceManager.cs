@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace AYO
@@ -17,7 +18,6 @@ namespace AYO
         private string text;
         private string id;
        
-
         private void Start()
         {
             // 선택지 UI 비활성화 > 여기서 하는게 맞나?
@@ -26,13 +26,33 @@ namespace AYO
 
         private void Update()
         {
-            EndChoice();
+            EscapeChoice();
         }
 
         // 선택지 목록을 받아오는 함수 >  플레이어/npc에게서 받아옴
-        public void GetChoiceArray(ChoiceArray choiceArray)
+        public void ShowChoiceArray(ChoiceArray choiceArray)
         {
             choicearray = choiceArray;
+
+            int j = 0;
+            choiceui.SetChoiceCharacter(choicearray.GetCharacterData().characterSprite, choicearray.GetCharacterData().characterName);
+
+            for (int i = 0; i < choicearray.GetChoiceCount(); i++)
+            {
+                choice = choicearray.GetChoice(i);
+
+                if (choice.ChoiceCondition())
+                {
+                    choiceui.SetButtonData(j, tableLoader.GetChoiceData(choice.GetChoiceID()), choice.InvokeNextEvent);
+                    j++;
+                    // GameObject button = choiceui.CreateChoiceButton();
+                    // TO do : 매개변수 작성
+                    //choiceui.SetChoiceArrayData(choicearray.GetCharacterData().characterSprite, choicearray.GetCharacterData().characterName,
+                    // tableLoader.GetChoiceData(choice.GetChoiceID()), choice.NextEvent());
+                }
+            }
+
+            choiceUI.SetActive(true);
         }
 
         // 받아온 선택지 목록을 판별하는 함수
@@ -47,7 +67,7 @@ namespace AYO
 
                 if (choice.ChoiceCondition())
                 {
-                    choiceui.SetButtonData(j, tableLoader.GetChoiceData(choice.GetChoiceID()), choice.NextEvent());
+                    choiceui.SetButtonData(j, tableLoader.GetChoiceData(choice.GetChoiceID()), choice.InvokeNextEvent);
                     j++;
                     // GameObject button = choiceui.CreateChoiceButton();
                     // TO do : 매개변수 작성
@@ -59,7 +79,12 @@ namespace AYO
             choiceUI.SetActive(true);
         }
 
-        public void EndChoice()
+        public void EndChoiceUI()
+        {
+            choiceUI.SetActive(false);
+        }
+
+        public void EscapeChoice()
         {
             if(Input.GetKeyDown(KeyCode.Escape))
             {

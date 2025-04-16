@@ -26,7 +26,7 @@ namespace AYO
         }
 
         // 몇 번 째 버튼에 데이터를 넣어줄 것인지 
-        public void SetButtonData(int j, string choiceText, UnityEvent choiceEvent)
+        public void SetButtonData(int j, string choiceText, UnityAction choiceEvent)
         {
             buttonUIArray[j].SetButton(choiceText, choiceEvent);
             buttonUIArray[j].gameObject.SetActive(true);

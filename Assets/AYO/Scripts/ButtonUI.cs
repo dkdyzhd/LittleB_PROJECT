@@ -18,7 +18,7 @@ namespace AYO
             button = GetComponent<Button>();
         }
 
-        public void SetButton(string buttonText, UnityEvent buttonEvent)
+        public void SetButton(string buttonText, UnityAction buttonEvent)
         {
             text.text = buttonText;
             button.onClick.AddListener(() => buttonEvent.Invoke());

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-using UnityEngine.Events;
+using UltEvents;
 
 namespace AYO
 {
@@ -10,7 +10,7 @@ namespace AYO
     {
         [Header("Speaking ¹è¿­")]
         [SerializeField] private Speaking[] array;
-        [SerializeField] private UnityEvent nextEvent;
+        [SerializeField] private UltEvent nextEvent;
 
         public Speaking GetSpeaking(int i)
         {

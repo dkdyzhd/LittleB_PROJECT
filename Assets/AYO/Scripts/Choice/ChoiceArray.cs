@@ -7,8 +7,8 @@ namespace AYO
     public class ChoiceArray : MonoBehaviour
     {
 
-        [SerializeField] private Choice[] choiceArray;
         [SerializeField] private CharacterData characterData;
+        [SerializeField] private Choice[] choiceArray;
 
         public Choice GetChoice(int i)
         {

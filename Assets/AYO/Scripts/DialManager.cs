@@ -9,7 +9,7 @@ namespace AYO
     {
 
         //[SerializeField] private DialogueUI dialogueUI;
-        [SerializeField] private SpeakingArray speakingArray;
+        //[SerializeField] private SpeakingArray firstSpeakingArray;
         [SerializeField] private TextTableLoader tableLoader;
         [SerializeField] private GameObject dialogueUI;
         [SerializeField] private Text dialogueLine;
@@ -20,12 +20,28 @@ namespace AYO
         private int i;  // 현재 내가 출력해야할 대사의 줄 번호
         private int j;  // 현재 내가 출력해야할 speaking의 번호
         private Speaking currentSpeaking;
+        private SpeakingArray currentSpeakingArray;
         private List<string> lines;
 
         private void Start()
         {
             dialogueUI.SetActive(false);
-            
+        }
+
+        // 선택지 이벤트에 넣어줄 함수
+        public void ShowDialogue(SpeakingArray speakingArray)
+        {
+            currentSpeakingArray = speakingArray;
+            //currentSpeaking = speakingArray.GetSpeaking(j);
+            //lines = tableLoader.GetTextData(currentSpeaking.GetSpeakingID());
+            //dialogueLine.text = lines[i];
+            StartDialogue();
+        }
+
+        // 상호작용 할 때 첫 인사를 받아오는 함수
+        public void FirstSpeakingArray(SpeakingArray speakingArray)
+        {
+            currentSpeakingArray = speakingArray;
         }
 
         // npcData = GetComponent<NPCData>();  >> 어떻게 가져올것인지?
@@ -33,8 +49,9 @@ namespace AYO
         // 반복문을 사용하는 대신 함수에 i++ & Enter 를 누를때마다 실행되도록
         public void ShowDialogue()
         {
-            currentSpeaking = speakingArray.GetSpeaking(j);     //.상호작용하고 있는 대상과의 대화가 나오는 것인가?
-            //List<string> lines = tableLoader.GetDialogueData(currentSpeaking.GetID()); 
+            // currentSpeaking = firstSpeakingArray.GetSpeaking(j);     //.상호작용하고 있는 대상과의 대화가 나오는 것인가?
+
+            currentSpeaking = currentSpeakingArray.GetSpeaking(j);
             lines = tableLoader.GetTextData(currentSpeaking.GetSpeakingID());
 
             dialogueLine.text = lines[i];
@@ -55,11 +72,12 @@ namespace AYO
                 j++;
                 i = 0;
                 // 배열이 끝나면 UI 비활성화 > j 사용
-                if(j >= speakingArray.GetArrayLength())
+                if(j >= currentSpeakingArray.GetArrayLength())      // firstSpeakingArray
                 {
                     dialogueUI.SetActive(false);
                     // 다음 이벤트 호출하면서  대화 종료
-                    speakingArray.InvokeNextEvent();
+                    currentSpeakingArray.InvokeNextEvent();
+                    j = 0;
                     return;
                 }
 
@@ -71,13 +89,17 @@ namespace AYO
         public void StartDialogue()
         {
             dialogueUI.SetActive(true);
-            //speaking.MakeSpeak();
 
             ShowDialogue();
             
         }
 
         public void EndDialogue()
+        {
+            dialogueUI.SetActive(false);
+        }
+
+        public void Escape()
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -89,7 +111,7 @@ namespace AYO
         void Update()
         {
             ReadLine();
-            EndDialogue();
+            Escape();
         }
     }
 }

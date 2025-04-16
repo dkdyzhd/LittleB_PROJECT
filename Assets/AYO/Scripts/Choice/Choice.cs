@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UltEvents;
 
 namespace AYO
 {
@@ -11,7 +12,7 @@ namespace AYO
 
         [SerializeField] private Condition condition;
         [SerializeField] private string choiceID;
-        [SerializeField] private UnityEvent nextEvent;
+        [SerializeField] private UltEvent nextEvent;
 
         public bool ChoiceCondition()
         {
@@ -30,7 +31,7 @@ namespace AYO
             nextEvent.Invoke();
         }
 
-        public UnityEvent NextEvent()
+        public UltEvent NextEvent()
         {
             return nextEvent;
         }
