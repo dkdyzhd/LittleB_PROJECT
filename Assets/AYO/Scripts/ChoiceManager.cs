@@ -29,7 +29,7 @@ namespace AYO
             EscapeChoice();
         }
 
-        // 선택지 목록을 받아오는 함수 >  플레이어/npc에게서 받아옴
+        // 선택지 목록을 받아오고 판별하는 함수 >  플레이어/npc에게서 받아옴
         public void ShowChoiceArray(ChoiceArray choiceArray)
         {
             choicearray = choiceArray;
@@ -43,36 +43,12 @@ namespace AYO
 
                 if (choice.ChoiceCondition())
                 {
-                    choiceui.SetButtonData(j, tableLoader.GetChoiceData(choice.GetChoiceID()), choice.InvokeNextEvent);
+                    choiceui.SetButtonData(j, tableLoader.GetChoiceData(choice.GetChoiceID()), choice.NextEvent());
                     j++;
                     // GameObject button = choiceui.CreateChoiceButton();
                     // TO do : 매개변수 작성
                     //choiceui.SetChoiceArrayData(choicearray.GetCharacterData().characterSprite, choicearray.GetCharacterData().characterName,
                     // tableLoader.GetChoiceData(choice.GetChoiceID()), choice.NextEvent());
-                }
-            }
-
-            choiceUI.SetActive(true);
-        }
-
-        // 받아온 선택지 목록을 판별하는 함수
-        public void CheckChoiceArray()
-        {
-            int j = 0;
-            choiceui.SetChoiceCharacter(choicearray.GetCharacterData().characterSprite, choicearray.GetCharacterData().characterName);
-
-            for(int i = 0; i <choicearray.GetChoiceCount(); i++)
-            {
-                choice = choicearray.GetChoice(i);
-
-                if (choice.ChoiceCondition())
-                {
-                    choiceui.SetButtonData(j, tableLoader.GetChoiceData(choice.GetChoiceID()), choice.InvokeNextEvent);
-                    j++;
-                    // GameObject button = choiceui.CreateChoiceButton();
-                    // TO do : 매개변수 작성
-                    //choiceui.SetChoiceArrayData(choicearray.GetCharacterData().characterSprite, choicearray.GetCharacterData().characterName,
-                       // tableLoader.GetChoiceData(choice.GetChoiceID()), choice.NextEvent());
                 }
             }
 

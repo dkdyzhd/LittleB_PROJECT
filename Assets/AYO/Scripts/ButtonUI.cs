@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Events;
+using UltEvents;
 
 
 namespace AYO
@@ -18,7 +18,7 @@ namespace AYO
             button = GetComponent<Button>();
         }
 
-        public void SetButton(string buttonText, UnityAction buttonEvent)
+        public void SetButton(string buttonText, UltEvent buttonEvent)
         {
             text.text = buttonText;
             button.onClick.AddListener(() => buttonEvent.Invoke());

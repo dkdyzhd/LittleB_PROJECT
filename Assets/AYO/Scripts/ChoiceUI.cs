@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Events;
+using UltEvents;
 using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace AYO
@@ -26,10 +26,19 @@ namespace AYO
         }
 
         // 몇 번 째 버튼에 데이터를 넣어줄 것인지 
-        public void SetButtonData(int j, string choiceText, UnityAction choiceEvent)
+        public void SetButtonData(int j, string choiceText, UltEvent choiceEvent)    //UltEvent 로 바꾸면 UnityAction 이 안됨
         {
             buttonUIArray[j].SetButton(choiceText, choiceEvent);
             buttonUIArray[j].gameObject.SetActive(true);
+        }
+
+        public void ResetButton()
+        {
+            for(int i = 0; i < buttonUIArray.Length; i++) 
+            { 
+                buttonUIArray[i].gameObject.SetActive(false);
+                buttonUIArray[i].SetButton(null, null);
+            }
         }
 
         //[SerializeField] private Transform choiceListPanel;    //UI아이템 목록이 들어갈 부모 오브젝트
