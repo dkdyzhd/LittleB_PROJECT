@@ -32,25 +32,22 @@ namespace AYO
         public void ShowDialogue(SpeakingArray speakingArray)
         {
             currentSpeakingArray = speakingArray;
-            //currentSpeaking = speakingArray.GetSpeaking(j);
-            //lines = tableLoader.GetTextData(currentSpeaking.GetSpeakingID());
-            //dialogueLine.text = lines[i];
-            StartDialogue();
+            dialogueUI.SetActive(true);
+
+            ShowDialogue();
         }
 
-        // 상호작용 할 때 첫 인사를 받아오는 함수
-        public void FirstSpeakingArray(SpeakingArray speakingArray)
-        {
-            currentSpeakingArray = speakingArray;
-        }
+        // 상호작용 할 때 첫 인사를 받아오는 함수 >> ShowDialogue 로 받아올 수 있음 / 굳이 필요 X
+        //public void FirstSpeakingArray(SpeakingArray speakingArray)
+        //{
+        //    currentSpeakingArray = speakingArray;
+        //}
 
         // npcData = GetComponent<NPCData>();  >> 어떻게 가져올것인지?
         // lines의 첫번째 줄을 저장하는 변수를 만들 필요 X !!
         // 반복문을 사용하는 대신 함수에 i++ & Enter 를 누를때마다 실행되도록
         public void ShowDialogue()
         {
-            // currentSpeaking = firstSpeakingArray.GetSpeaking(j);     //.상호작용하고 있는 대상과의 대화가 나오는 것인가?
-
             currentSpeaking = currentSpeakingArray.GetSpeaking(j);
             lines = tableLoader.GetTextData(currentSpeaking.GetSpeakingID());
 
@@ -86,14 +83,7 @@ namespace AYO
             }
         }
 
-        public void StartDialogue()
-        {
-            dialogueUI.SetActive(true);
-
-            ShowDialogue();
-            
-        }
-
+        // Ult 이벤트에서 사용
         public void EndDialogue()
         {
             dialogueUI.SetActive(false);

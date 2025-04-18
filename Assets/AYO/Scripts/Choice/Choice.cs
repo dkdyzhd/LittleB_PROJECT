@@ -22,22 +22,6 @@ namespace AYO
         //    return false;
         //}
         
-        public bool ChoiceConditions()
-        {
-            for (int i = 0; i < conditions.GetConditionsLength(); i++)
-            {
-                if (conditions.GetCondition(i).Invoke())
-                {
-                    i++;
-                }
-
-                else
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
         public string GetChoiceID()
         {
             return choiceID;
@@ -52,5 +36,7 @@ namespace AYO
         {
             return nextEvent;
         }
+
+        public bool IsConditionSatisfied() => conditions.IsSatisfiedCondiotions();
     }
 }

@@ -4,18 +4,22 @@ using UnityEngine;
 
 namespace AYO
 {
-    public class CondiotionList : MonoBehaviour
+    [System.Serializable]
+    public class CondiotionList
     {
         [SerializeField] private Condition[] conditions;
 
-        public Condition GetCondition(int i)
+        // 조건들이 만족하는지 확인
+        public bool IsSatisfiedCondiotions()
         {
-            return conditions[i];
-        }
-
-        public int GetConditionsLength()
-        {
-            return conditions.Length;
+            for (int i = 0; i < conditions.Length; i++)
+            {
+                if (!conditions[i].Invoke())
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

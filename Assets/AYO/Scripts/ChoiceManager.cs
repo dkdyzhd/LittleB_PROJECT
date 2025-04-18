@@ -41,14 +41,8 @@ namespace AYO
             {
                 choice = choicearray.GetChoice(i);
 
-                // Condition 하나 일 때 사용한 코드
-                //if (choice.ChoiceCondition())
-                //{
-                //    choiceui.SetButtonData(j, tableLoader.GetChoiceData(choice.GetChoiceID()), choice.NextEvent());
-                //    j++;
-                //}
-
-                if (choice.ChoiceConditions())
+                // 선택지의 여러 개의 Condition 확인
+                if (choice.IsConditionSatisfied())
                 {
                     choiceui.SetButtonData(j, tableLoader.GetChoiceData(choice.GetChoiceID()), choice.NextEvent());
                     j++;
