@@ -7,5 +7,15 @@ namespace AYO
     public class CondiotionList : MonoBehaviour
     {
         [SerializeField] private Condition[] conditions;
+
+        public Condition GetCondition(int i)
+        {
+            return conditions[i];
+        }
+
+        public int GetConditionsLength()
+        {
+            return conditions.Length;
+        }
     }
 }

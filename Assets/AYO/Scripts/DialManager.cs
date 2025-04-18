@@ -74,10 +74,10 @@ namespace AYO
                 // 배열이 끝나면 UI 비활성화 > j 사용
                 if(j >= currentSpeakingArray.GetArrayLength())      // firstSpeakingArray
                 {
+                    j = 0;
                     dialogueUI.SetActive(false);
                     // 다음 이벤트 호출하면서  대화 종료
                     currentSpeakingArray.InvokeNextEvent();
-                    j = 0;
                     return;
                 }
 

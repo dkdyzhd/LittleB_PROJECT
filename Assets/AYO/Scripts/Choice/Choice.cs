@@ -9,16 +9,34 @@ namespace AYO
     public class Choice 
     {
 
-        [SerializeField] private Condition condition;
+        //[SerializeField] private Condition condition;
+        [SerializeField] private CondiotionList conditions;
         [SerializeField] private string choiceID;
         [SerializeField] private UltEvent nextEvent;
 
-        public bool ChoiceCondition()
-        {
-            if (condition.Invoke())   // 왜 리턴이 bool 인 클래스를 상속받는데 안되는지? 
-                return true;            // >> condition은 함수를 저장하는 공간-> 함수 실행결과로 따져야함
+        //public bool ChoiceCondition()
+        //{
+        //    if (condition.Invoke())   // 왜 리턴이 bool 인 클래스를 상속받는데 안되는지? 
+        //        return true;            // >> condition은 함수를 저장하는 공간-> 함수 실행결과로 따져야함
 
-            return false;
+        //    return false;
+        //}
+        
+        public bool ChoiceConditions()
+        {
+            for (int i = 0; i < conditions.GetConditionsLength(); i++)
+            {
+                if (conditions.GetCondition(i).Invoke())
+                {
+                    i++;
+                }
+
+                else
+                {
+                    return false;
+                }
+            }
+            return true;
         }
         public string GetChoiceID()
         {

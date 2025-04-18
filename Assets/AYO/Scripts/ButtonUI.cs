@@ -23,5 +23,11 @@ namespace AYO
             text.text = buttonText;
             button.onClick.AddListener(() => buttonEvent.Invoke());
         }
+
+        public void ResetButton()
+        {
+            text.text = "";
+            button.onClick.RemoveAllListeners();
+        }
     }
 }

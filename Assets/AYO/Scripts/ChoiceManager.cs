@@ -29,7 +29,7 @@ namespace AYO
             EscapeChoice();
         }
 
-        // 선택지 목록을 받아오고 판별하는 함수 >  플레이어/npc에게서 받아옴
+        // 선택지 목록을 받아오고 판별하는 함수 (Ult이벤트에서 사용) >  플레이어/npc에게서 받아옴
         public void ShowChoiceArray(ChoiceArray choiceArray)
         {
             choicearray = choiceArray;
@@ -41,14 +41,17 @@ namespace AYO
             {
                 choice = choicearray.GetChoice(i);
 
-                if (choice.ChoiceCondition())
+                // Condition 하나 일 때 사용한 코드
+                //if (choice.ChoiceCondition())
+                //{
+                //    choiceui.SetButtonData(j, tableLoader.GetChoiceData(choice.GetChoiceID()), choice.NextEvent());
+                //    j++;
+                //}
+
+                if (choice.ChoiceConditions())
                 {
                     choiceui.SetButtonData(j, tableLoader.GetChoiceData(choice.GetChoiceID()), choice.NextEvent());
                     j++;
-                    // GameObject button = choiceui.CreateChoiceButton();
-                    // TO do : 매개변수 작성
-                    //choiceui.SetChoiceArrayData(choicearray.GetCharacterData().characterSprite, choicearray.GetCharacterData().characterName,
-                    // tableLoader.GetChoiceData(choice.GetChoiceID()), choice.NextEvent());
                 }
             }
 

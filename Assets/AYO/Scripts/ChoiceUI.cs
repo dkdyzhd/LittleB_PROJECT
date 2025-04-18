@@ -13,10 +13,6 @@ namespace AYO
         [SerializeField] private Image characterImage;
         [SerializeField] private ButtonUI[] buttonUIArray;
 
-        private void Start()
-        {
-            
-        }
 
         // 누가 가진 선택지 인지 세팅
         public void SetChoiceCharacter(Sprite characterSprite, string characterName)
@@ -37,7 +33,7 @@ namespace AYO
             for(int i = 0; i < buttonUIArray.Length; i++) 
             { 
                 buttonUIArray[i].gameObject.SetActive(false);
-                buttonUIArray[i].SetButton(null, null);
+                buttonUIArray[i].ResetButton();
             }
         }
 
