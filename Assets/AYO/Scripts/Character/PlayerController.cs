@@ -1,10 +1,11 @@
-﻿using System.Collections;
+﻿using AYO.InputInterface;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace AYO
 {
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : MonoBehaviour, INavigateInputTarget
     {
         [SerializeField] private float groundCheckWidthMultiplier = 0.9f; // 지면 체크 너비 (캐릭터 크기 대비)
         [SerializeField] private float groundCheckHeight = 0.1f;         // 지면 체크 높이
@@ -20,6 +21,7 @@ namespace AYO
         private Rigidbody2D rb;
         private Animator ani;
         private SpriteRenderer sp;
+        [SerializeField] private PlayerInputEventManager plm;
 
         // 상태값
         private bool isGrounded;
@@ -41,6 +43,8 @@ namespace AYO
             rb = GetComponent<Rigidbody2D>();
             sp = GetComponent<SpriteRenderer>();
             ani = GetComponent<Animator>();
+            plm.NavigateTarget = this;
+
             //dialogueManager = FindObjectOfType<DialogueManager>();
         }
 
@@ -66,10 +70,10 @@ namespace AYO
             CheckGrounded();  // 땅에 닿았는지 확인
 
             // 땅에 있을 때만 이동 처리
-            if (isGrounded)
-            {
-                MoveCharacter(InputSystem.Singleton.MoveInput);
-            }
+            //if (isGrounded)
+            //{
+            //    MoveCharacter(InputSystem.Singleton.MoveInput);
+            //}
             
             if (rb.velocity.y > 0 || rb.velocity.y < 0)
             {
@@ -78,31 +82,43 @@ namespace AYO
             }
         }
 
+        public void OnNavigate(UnityEngine.InputSystem.InputAction.CallbackContext context)
+        {
+            if(context.performed)
+            {
+                Vector2 v = context.ReadValue<Vector2>();
+                MoveCharacter(v);
+            }
+        }
+
         /// <summary>
         /// 좌우 이동 처리
         /// </summary>
         private void MoveCharacter(Vector2 direction)
         {
-            if (direction != Vector2.zero)
+            if(isGrounded)
             {
-                // 만약 점프 중이 아니면 달리기 애니메이션 재생
-                if (!isJumping)
+                if (direction != Vector2.zero)
                 {
-                    ani.SetBool("IsRun", true);
-                }
-                rb.velocity = new Vector2(direction.x * speed, rb.velocity.y);
+                    // 만약 점프 중이 아니면 달리기 애니메이션 재생
+                    if (!isJumping)
+                    {
+                        ani.SetBool("IsRun", true);
+                    }
+                    rb.velocity = new Vector2(direction.x * speed, rb.velocity.y);
 
-                // 캐릭터 좌우 반전
-                Vector3 scale = transform.localScale;
-                scale.x = (direction.x < 0) ? -Mathf.Abs(scale.x) : Mathf.Abs(scale.x);
-                transform.localScale = scale;
-            }
-            else
-            {
-                // 이동 입력이 없으면 달리기 애니메이션 끔
-                ani.SetBool("IsRun", false);
-                rb.velocity = new Vector2(0, rb.velocity.y);
-            }
+                    // 캐릭터 좌우 반전
+                    Vector3 scale = transform.localScale;
+                    scale.x = (direction.x < 0) ? -Mathf.Abs(scale.x) : Mathf.Abs(scale.x);
+                    transform.localScale = scale;
+                }
+                else
+                {
+                    // 이동 입력이 없으면 달리기 애니메이션 끔
+                    ani.SetBool("IsRun", false);
+                    rb.velocity = new Vector2(0, rb.velocity.y);
+                }
+            }          
         }
 
         /// <summary>
@@ -226,5 +242,7 @@ namespace AYO
         {
             return false;
         }
+
+        
     }
 }
