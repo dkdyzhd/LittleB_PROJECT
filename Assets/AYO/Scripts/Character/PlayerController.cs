@@ -13,6 +13,7 @@ namespace AYO
         [SerializeField] private float groundadjusted = 0.1f;
         [SerializeField] private float jumpForce = 5f;
         [SerializeField] private float speed = 3f;
+        private Vector2 v;
 
         // 대화 시스템
         //private DialogueManager dialogueManager;
@@ -21,7 +22,7 @@ namespace AYO
         private Rigidbody2D rb;
         private Animator ani;
         private SpriteRenderer sp;
-        [SerializeField] private PlayerInputEventManager plm;
+        [SerializeField] private PlayerInputEventManager pInputManager;
 
         // 상태값
         private bool isGrounded;
@@ -43,7 +44,7 @@ namespace AYO
             rb = GetComponent<Rigidbody2D>();
             sp = GetComponent<SpriteRenderer>();
             ani = GetComponent<Animator>();
-            plm.NavigateTarget = this;
+            pInputManager.NavigateTarget = this;
 
             //dialogueManager = FindObjectOfType<DialogueManager>();
         }
@@ -58,7 +59,8 @@ namespace AYO
             //}
 
             HandleJump();    
-            UpdateSprite();  
+            UpdateSprite();
+            MoveCharacter(v);
         }
 
         private void FixedUpdate()
@@ -84,10 +86,9 @@ namespace AYO
 
         public void OnNavigate(UnityEngine.InputSystem.InputAction.CallbackContext context)
         {
-            if(context.performed)
+            if(context.performed || context.canceled)
             {
-                Vector2 v = context.ReadValue<Vector2>();
-                MoveCharacter(v);
+                v = context.ReadValue<Vector2>();
             }
         }
 
