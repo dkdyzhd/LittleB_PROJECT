@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace AYO
 {
-    public class DialManager : MonoBehaviour, INavigateInputTarget
+    public class DialManager : MonoBehaviour
     {
         [SerializeField] private PlayerController player;
         [SerializeField] private PlayerInputEventManager pInputManager;
@@ -32,7 +32,7 @@ namespace AYO
         // 선택지 이벤트에 넣어줄 함수
         public void ShowDialogue(SpeakingArray speakingArray)
         {
-            pInputManager.NavigateTarget = this;
+            pInputManager.NavigateTarget = null;
 
             currentSpeakingArray = speakingArray;
             dialogueUI.SetActive(true);
@@ -108,11 +108,6 @@ namespace AYO
         {
             ReadLine();
             Escape();
-        }
-
-        public void OnNavigate(InputAction.CallbackContext context)
-        {
-            
         }
     }
 }

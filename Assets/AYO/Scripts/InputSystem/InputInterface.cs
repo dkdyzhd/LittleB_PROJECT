@@ -12,5 +12,10 @@ namespace AYO
         {
             void OnNavigate(InputAction.CallbackContext context);
         }
+
+        public interface ISpaceInputTarget
+        {
+
+        }
     }
 }

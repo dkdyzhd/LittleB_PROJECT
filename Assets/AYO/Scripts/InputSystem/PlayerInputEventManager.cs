@@ -13,7 +13,10 @@ namespace AYO
 
         public void OnNavigate(InputAction.CallbackContext context)
         {
-            NavigateTarget.OnNavigate(context);
+            if(NavigateTarget != null)
+            {
+                NavigateTarget.OnNavigate(context);
+            }
         }
     }
 }
