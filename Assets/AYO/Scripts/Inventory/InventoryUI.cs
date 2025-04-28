@@ -1,21 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace AYO
 {
     public class InventoryUI : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
+        [SerializeField] private SlotUI[] slots;
+
+        public void SetItemCount(int index, int count)
         {
-        
+
         }
 
-        // Update is called once per frame
-        void Update()
+        public void RefreshInven()
         {
-        
+
         }
     }
 }
