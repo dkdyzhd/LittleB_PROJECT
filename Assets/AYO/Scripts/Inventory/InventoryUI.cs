@@ -9,14 +9,24 @@ namespace AYO
     {
         [SerializeField] private SlotUI[] slots;
 
-        public void SetItemCount(int index, int count)
+        public void RefreshUI(SlotData[] slotDataList)
         {
-
+            int i = 0;
+            for (; i < slotDataList.Length && i < slots.Length; i++)
+            {
+                SlotData slotData = slotDataList[i];
+                slots[i].Item = slotData.GetItemData();
+                slots[i].Count = slotData.GetItemCount();
+            }
+            for (; i < slots.Length; i++)
+            {
+                slots[i].Item = null;
+            }
         }
 
-        public void RefreshInven()
+        public void SetSlotUICount(int index, int count)
         {
-
+            slots[index].Count = count;
         }
     }
 }

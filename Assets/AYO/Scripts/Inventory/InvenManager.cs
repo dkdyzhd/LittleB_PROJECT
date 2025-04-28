@@ -6,11 +6,15 @@ namespace AYO
 {
     public class InvenManager : MonoBehaviour
     {
-        private SlotDataList slotDataList;
+        private SlotData[] slotDataList;
+        
+        private InventoryUI invenUI;
 
-        public int GetExistItemStackable(ItemData itemData, out SlotData resultData)
+
+        // 스택이 가능한 같은 아이템을 가지고 있다면 그 인덱스를 반환
+        public int GetExistItemStackable(ItemData itemData, out SlotData resultData)    
         {
-            for (int i = 0; i < slotDataList.GetSlotsLength(); i++)
+            for (int i = 0; i < slotDataList.Length; i++)
             {
                 //if(slotDataList.GetSlotItemData(i) == itemData)
                 //{
@@ -18,7 +22,7 @@ namespace AYO
                 //    return i;
                 //}
 
-                SlotData currentSlot = slotDataList.GetSlotData(i);
+                SlotData currentSlot = slotDataList[i];
                 if (currentSlot.GetItemData() == itemData)
                 {
                     resultData = currentSlot;
@@ -44,14 +48,15 @@ namespace AYO
                     Debug.Log($" 기존 아이템 {itemData.itemName} 개수 증가: {result.GetItemCount()}");
                     
                     // To do :  인벤토리 count에도 적용
+                    invenUI.SetSlotUICount(index, result.GetItemCount());
                     return;
                 }
             }
 
             // 빈 슬롯 찾아서 새 아이템 추가
-            for (int i = 0;i < slotDataList.GetSlotsLength();i++)
+            for (int i = 0;i < slotDataList.Length;i++)
             {
-                SlotData currentslot = slotDataList.GetSlotData(i);
+                SlotData currentslot = slotDataList[i];
                 if (currentslot.GetItemData() == null)
                 {
                     currentslot.SetSlotItemData(itemData);
@@ -59,6 +64,7 @@ namespace AYO
                     Debug.Log($" 새 아이템 추가: {itemData.itemName}, 개수: 1");
 
                     // To do :  인벤토리 Refresh 구현
+                    invenUI.RefreshUI(slotDataList); 
                     return;
                 }
             }

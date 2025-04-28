@@ -13,7 +13,7 @@ namespace AYO
         private ItemData currentItem;                   // 받아올 아이템 저장
 
 
-        public ItemData item
+        public ItemData Item
         {
             get { return currentItem; }
             set
@@ -21,7 +21,7 @@ namespace AYO
                 currentItem = value;        // 아이템 받아오기
                 if (currentItem != null )
                 {
-                    itemImage.sprite = item.itemIcon;
+                    itemImage.sprite = Item.itemIcon;
                 }
                 else
                 {
@@ -30,10 +30,12 @@ namespace AYO
                 }
             }
         }
+
         public int Count
         {
             set
             {
+
                 if(value > 1)
                 {   // 1 보다 크면 값을 string으로 변환
                     countText.text = value.ToString();

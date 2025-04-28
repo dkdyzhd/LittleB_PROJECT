@@ -6,9 +6,8 @@ namespace AYO
 {
     public class SlotDataList : MonoBehaviour
     {
-        [SerializeField] private SlotData[] slotDatas;
+        private SlotData[] slotDatas;
 
-        private SlotData slot;
 
         public ItemData GetSlotItemData(int i)
         {
