@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86ee73ee563853046a618315a0afc051, type: 3}
+  m_Name: Strange_Root
+  m_EditorClassIdentifier: 
+  itemID: IT040204
+  itemName: "\uC774\uC0C1\uD55C\uBFCC\uB9AC"
+  itemIcon: {fileID: 21300000, guid: 2e27b408800fa1c4c827e6fb70710bc7, type: 3}
+  inspectText: "\uB3C4\uB77C\uC9C0\uB97C \uB2EE\uC558\uC9C0\uB9CC \uBA39\uC73C\uBA74
+    \uC2EC\uD55C \uBC30\uD0C8\uC774 \uB09C\uB2E4\uACE0 \uD55C\uB2E4."
+  isStackable: 0
+  maxStackAmount: 0
+  isDispoable: 1
+  combinationID: CO000201

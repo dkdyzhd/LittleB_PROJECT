@@ -8,8 +8,8 @@ namespace AYO
 {
     public class SlotUI : MonoBehaviour
     {
-        private Image itemImage;                        // 아이템 이미지
-        private TMPro.TextMeshProUGUI countText;        // 아이템 갯수
+        [SerializeField] private Image itemImage;                        // 아이템 이미지
+        [SerializeField] private TMPro.TextMeshProUGUI countText;        // 아이템 갯수
         private ItemData currentItem;                   // 받아올 아이템 저장
 
 

@@ -7,18 +7,18 @@ namespace AYO
 {
     public class InventoryUI : MonoBehaviour
     {
-        [SerializeField] private SlotUI[] slots;
+        [SerializeField] private List<SlotUI> slots;
 
-        public void RefreshUI(SlotData[] slotDataList)
+        public void RefreshUI(List<SlotData> slotDataList)
         {
             int i = 0;
-            for (; i < slotDataList.Length && i < slots.Length; i++)
+            for (; i < slotDataList.Count && i < slots.Count; i++)
             {
-                SlotData slotData = slotDataList[i];
-                slots[i].Item = slotData.GetItemData();
-                slots[i].Count = slotData.GetItemCount();
+                //SlotData slotData = slotDataList[i];
+                slots[i].Item = slotDataList[i].GetItemData();
+                slots[i].Count = slotDataList[i].GetItemCount();
             }
-            for (; i < slots.Length; i++)
+            for (; i < slots.Count; i++)
             {
                 slots[i].Item = null;
             }

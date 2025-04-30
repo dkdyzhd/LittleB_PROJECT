@@ -1,20 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace AYO
 {
     public class InvenManager : MonoBehaviour
     {
-        private SlotData[] slotDataList;
+        private List<SlotData> slotDataList = new List<SlotData>();
+        //private SlotData[] slotDataList = new SlotData[48];
         
-        private InventoryUI invenUI;
+        [SerializeField] private InventoryUI invenUI;
 
 
         // 스택이 가능한 같은 아이템을 가지고 있다면 그 인덱스를 반환
         public int GetExistItemStackable(ItemData itemData, out SlotData resultData)    
         {
-            for (int i = 0; i < slotDataList.Length; i++)
+            for (int i = 0; i < slotDataList.Count; i++)
             {
                 //if(slotDataList.GetSlotItemData(i) == itemData)
                 //{
@@ -22,10 +24,10 @@ namespace AYO
                 //    return i;
                 //}
 
-                SlotData currentSlot = slotDataList[i];
-                if (currentSlot.GetItemData() == itemData)
+                //SlotData currentSlot = slotDataList[i];
+                if (slotDataList[i] != null && slotDataList[i].GetItemData() == itemData)
                 {
-                    resultData = currentSlot;
+                    resultData = slotDataList[i];
                     return i;
                 }
             }
@@ -53,21 +55,30 @@ namespace AYO
                 }
             }
 
-            // 빈 슬롯 찾아서 새 아이템 추가
-            for (int i = 0;i < slotDataList.Length;i++)
+            // 빈 슬롯 찾기 & 새로운칸을 만들어야 할 때 그 인덱스 저장
+            int i = 0;
+            for (i = 0;i < slotDataList.Count;i++)      //데이터 리스트의 번호만 알려줌
             {
-                SlotData currentslot = slotDataList[i];
-                if (currentslot.GetItemData() == null)
+                //SlotData currentslot = slotDataList[i];
+                if (slotDataList[i].GetItemData() == null) // (currentslot.GetItemData() == null
                 {
-                    currentslot.SetSlotItemData(itemData);
-
-                    Debug.Log($" 새 아이템 추가: {itemData.itemName}, 개수: 1");
-
-                    // To do :  인벤토리 Refresh 구현
-                    invenUI.RefreshUI(slotDataList); 
-                    return;
+                    break;
                 }
             }
+
+            // 새 아이템 추가
+            SlotData slotdata = new SlotData();
+            slotdata.SetSlotItemData(itemData);
+            slotdata.SetSlotItemCount(1);
+            slotDataList.Add(slotdata);
+            Debug.Log($" 새 아이템 추가: {itemData.itemName}, 개수: 1");
+
+            //slotDataList[i].SetSlotItemData(itemData);
+            //slotDataList[i].SetSlotItemCount(1);
+            invenUI.RefreshUI(slotDataList);
+
+
+
         }
     }
 }

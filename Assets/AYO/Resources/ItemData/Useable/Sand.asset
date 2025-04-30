@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab65c7b07317dfa40839335b9e9a0d68, type: 3}
+  m_Name: Sand
+  m_EditorClassIdentifier: 
+  itemID: IT010003
+  itemName: "\uBAA8\uB798\uC8FC\uBA38\uB2C8"
+  itemIcon: {fileID: 21300000, guid: 16259480aff268644849e75e49d86f36, type: 3}
+  inspectText: "\uC0AC\uC6A9 \uC2DC \uBAA8\uB798\uAC00 \uB4E0 \uC8FC\uBA38\uB2C8\uB97C
+    \uB358\uC838 \uC801\uC911\uD55C \uC801\uC774 \uC55E\uC744 \uBCF4\uAE30 \uD798\uB4E4\uAC8C
+    \uB9CC\uB4E0\uB2E4."
+  isStackable: 1
+  maxStackAmount: 0
+  isDispoable: 1
+  isExpendable: 1
+  itemEffectID: SK000003
+  itemCooldown: 5

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab65c7b07317dfa40839335b9e9a0d68, type: 3}
+  m_Name: Sapphire
+  m_EditorClassIdentifier: 
+  itemID: IT030206
+  itemName: "\uACA8\uC6B8\uC758 \uC0AC\uD30C\uC774\uC5B4"
+  itemIcon: {fileID: 21300000, guid: 4bfea5f7503baef4aa8a4fe47452e24c, type: 3}
+  inspectText: "\uACA8\uC6B8 \uBC14\uB78C\uC758 \uC815\uB839\uC5D0\uAC8C\uC11C \uBC1B\uC740
+    \uD478\uB978\uBE5B \uBCF4\uC11D. \uC5BC\uC74C\uCC98\uB7FC \uCC28\uAC11\uB2E4."
+  isStackable: 0
+  maxStackAmount: 0
+  isDispoable: 0
+  isExpendable: 0
+  itemEffectID: 
+  itemCooldown: 0

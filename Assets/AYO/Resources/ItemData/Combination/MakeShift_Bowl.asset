@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86ee73ee563853046a618315a0afc051, type: 3}
+  m_Name: MakeShift_Bowl
+  m_EditorClassIdentifier: 
+  itemID: IT040205
+  itemName: "\uC6C0\uD479\uD30C\uC778 \uB3CC\uBA69\uC774"
+  itemIcon: {fileID: 0}
+  inspectText: "\uC5B4\uCA50\uC9C0 \uC6C0\uD479 \uB4E4\uC5B4\uAC04 \uACF3\uC774 \uC788\uB294
+    \uD07C\uC9C1\uD558\uACE0 \uB113\uC801\uD55C \uB3CC\uBA69\uC774\uB2E4."
+  isStackable: 0
+  maxStackAmount: 0
+  isDispoable: 1
+  combinationID: CO000201
