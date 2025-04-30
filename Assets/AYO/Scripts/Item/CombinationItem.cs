@@ -4,18 +4,9 @@ using UnityEngine;
 
 namespace AYO
 {
-    public class CombinationItem : MonoBehaviour
+    [CreateAssetMenu(fileName = "ItemData", menuName = "Item / Combination")]
+    public class CombinationItem : ItemData
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
+        public string combinationID;
     }
 }

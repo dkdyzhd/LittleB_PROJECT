@@ -4,18 +4,13 @@ using UnityEngine;
 
 namespace AYO
 {
-    public class UseableItem : MonoBehaviour
+    [CreateAssetMenu(fileName = "ItemData", menuName = "Item / Useable")]
+    public class UseableItem : ItemData
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
+        [Header("Expendable")]  // 사용 시 소모 여부
+        public bool isExpendable;
 
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
+        public string itemEffectID;
+        public float itemCooldown;
     }
 }

@@ -9,18 +9,18 @@ namespace AYO
         private SlotData[] slotDatas;
 
 
-        public ItemData GetSlotItemData(int i)
-        {
-            return slotDatas[i].GetItemData();
-        }
-        public SlotData GetSlotData(int i)
-        {
-            return slotDatas[i];
-        }
+        //public ItemData GetSlotItemData(int i)
+        //{
+        //    return slotDatas[i].GetItemData();
+        //}
+        //public SlotData GetSlotData(int i)
+        //{
+        //    return slotDatas[i];
+        //}
 
-        public int GetSlotsLength()
-        {
-            return slotDatas.Length;
-        }
+        //public int GetSlotsLength()
+        //{
+        //    return slotDatas.Length;
+        //}
     }
 }
