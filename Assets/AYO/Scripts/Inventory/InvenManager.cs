@@ -76,9 +76,22 @@ namespace AYO
             //slotDataList[i].SetSlotItemData(itemData);
             //slotDataList[i].SetSlotItemCount(1);
             invenUI.RefreshUI(slotDataList);
+        }
 
+        public void RemoveItem(ItemData item, int quantity)
+        {
+            int index = GetExistItemStackable(item, out SlotData result);   //result가 null이면 -1을 반환
+            int slotIndex = slotDataList.IndexOf(result);   // 따로 리스트의 인덱스를 뽑아내는 함수를g= 활용하여 저장
+            if (result != null && index >= 0)
+            {
+                result.SetSlotItemCount(-quantity);
+                if(result.GetItemCount() <= 0)
+                {   // 다쓰면 아이템데이터가 퀵슬롯에서 없어지도록
+                    slotDataList[slotIndex] = null;
+                }
+            }
 
-
+            invenUI.RefreshUI(slotDataList);
         }
     }
 }
