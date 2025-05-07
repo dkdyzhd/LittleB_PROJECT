@@ -19,11 +19,114 @@ namespace AYO
         [Header("웨이포인트")]
         [SerializeField] private Transform[] wayPoint;
 
+        [SerializeField] private GameObject player;
+        private Animator anim;
+
         // Patrol 에 필요한 변수들
         private Vector3 basePos;    // ENPC의 기본 위치
-        private Vector3 targetPos;  // 목표 좌표
+        private Vector3 targetPos;  // 목표 좌표 저장
         private Vector3 dirVec;     // 이동할 방향 벡터
+        private float moveDurTime;  // 이동하는데 걸리는 시간
+        private float addTime;      // 출발하고나서 시간
         private float waitTime;     // 대기시간
+        private bool moveOnOff;     // 움직임 제한 변수
+        private int i;          // 몇번 째 웨이포인트를 타겟으로 할지
+        private int beforei;        // 전에 다녀온 웨이포인트 인덱스를 저장(다음 인덱스의 증가/감소를 정하기 위함)
 
+        // Combat 에 필요한 변수들
+        private Vector3 playerDir;
+        private float distance;
+
+        private void Start()
+        {
+            anim = GetComponent<Animator>();
+            waitTime = Random.Range(2, 3);
+        }
+        private void Update()
+        {
+            PatrolMove();
+        }
+        public void SetNextWayPointIndex()
+        {
+            if(i == 0)
+            {
+                beforei = i;
+                i++;
+            }
+            else if(i >= wayPoint.Length - 1 || i < beforei)
+            {
+                beforei = i;
+                i--;
+            }
+            else
+            {
+                beforei = i;
+                i++;
+            }
+        }
+        public void PatrolMove()
+        {
+
+            if (!moveOnOff) // 목표 지점에 도달 or 대기중상태
+            {
+                if(waitTime <= 0)   // 대기가 끝나면
+                {
+                    // 타겟 웨이포인트 저장
+                    targetPos = wayPoint[i].position;
+                    SetNextWayPointIndex();
+                    // 가는데 걸릴 시간 = 거리 / 속도
+                    moveDurTime = Vector3.Distance(transform.position, targetPos) / moveSpeed;
+                    addTime = 0.0f;
+                    moveOnOff = true;       // 이동 활성화
+                }
+                else
+                {
+                    waitTime -= Time.deltaTime;
+                    return;
+                }
+            }
+
+            else    // patrol 이동
+            {
+                addTime += Time.deltaTime;
+                if(addTime >= moveDurTime)
+                {
+                    waitTime = Random.Range(2, 3);
+                    moveOnOff = false;      // 이동 완료
+                    anim.SetBool("Walk", false);
+                }
+                else
+                {
+                    anim.SetBool("Walk", true);
+                    // 목표 지점으로 이동
+                    dirVec = (targetPos - transform.position).normalized;
+                    transform.position = Vector2.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
+
+                    // 목표 지점을 바라보도록
+                    Vector3 scale = transform.localScale;
+                    // 타겟의 x좌표 기준
+                    scale.x = (targetPos.x < transform.position.x) ? 1 : -1;    // 캐릭터Sprite가 왼쪽을 보고 있어서 좌우 방향 바꿈
+                    transform.localScale = scale;
+                }
+            }
+        }
+
+        public void CombatMode()
+        {
+            // 플레이어 방향
+            //playerDir = (transform.position - player.transform.position).normalized;
+            // 플레이어와 거리
+            distance = Vector3.Distance(player.transform.position, transform.position);
+            // 플레이어 위치 저장
+            targetPos = player.transform.position;
+
+            dirVec = playerDir.normalized;
+            transform.position = Vector2.MoveTowards(transform.position, dirVec, moveSpeed * Time.deltaTime);
+        }
+
+        public void ENPCAI()
+        {
+
+        }
     }
 }
