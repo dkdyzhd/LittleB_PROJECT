@@ -36,8 +36,9 @@ namespace AYO
         private int beforei;        // 전에 다녀온 웨이포인트 인덱스를 저장(다음 인덱스의 증가/감소를 정하기 위함)
 
         // Combat 에 필요한 변수들
-        private Vector3 playerDir;
-        private float distance;
+        private Vector3 playerDir;      // 플레이어쪽 방향 벡터 > 필요한가?
+        private float distance;         // 플레이어와 enpc 사이 거리 
+        private float canAttackDis;     // 공격가능 거리
 
         private void Start()
         {
@@ -100,7 +101,7 @@ namespace AYO
                 {
                     // 목표 지점으로 이동
                     //dirVec = (targetPos - transform.position).normalized;
-                    transform.position = Vector2.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
+                    //transform.position = Vector2.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
 
                     anim.SetBool("Walk", true);
                     // 지금은 x축만 계산하면됨 >> Vector2로 계산하는건 필요 이상으로 계산이 들어가서 불필요
@@ -121,15 +122,14 @@ namespace AYO
 
         public void CombatMode()
         {
-            // 플레이어 방향
-            playerDir = (transform.position - player.transform.position).normalized;
-            // 플레이어와 거리
-            distance = Vector3.Distance(player.transform.position, transform.position);
             // 플레이어 위치 저장
             targetPos = player.transform.position;
+            // 플레이어 방향
+            playerDir = (transform.position - targetPos).normalized;
+            // 플레이어와 거리
+            distance = Vector3.Distance(player.transform.position, transform.position);
 
-            dirVec = playerDir.normalized;
-            transform.position = Vector2.MoveTowards(transform.position, dirVec, moveSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
         }
 
         public void ENPCAI()
