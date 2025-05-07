@@ -22,6 +22,8 @@ namespace AYO
         [SerializeField] private GameObject player;
         private Animator anim;
 
+        private Vector3 scale;
+
         // Patrol 에 필요한 변수들
         private Vector3 basePos;    // ENPC의 기본 위치
         private Vector3 targetPos;  // 목표 좌표 저장
@@ -41,6 +43,7 @@ namespace AYO
         {
             anim = GetComponent<Animator>();
             waitTime = Random.Range(2, 3);
+            scale = transform.localScale;
         }
         private void Update()
         {
@@ -74,9 +77,7 @@ namespace AYO
                     // 타겟 웨이포인트 저장
                     targetPos = wayPoint[i].position;
                     SetNextWayPointIndex();
-                    // 가는데 걸릴 시간 = 거리 / 속도
-                    moveDurTime = Vector3.Distance(transform.position, targetPos) / moveSpeed;
-                    addTime = 0.0f;
+                    
                     moveOnOff = true;       // 이동 활성화
                 }
                 else
@@ -88,25 +89,32 @@ namespace AYO
 
             else    // patrol 이동
             {
-                addTime += Time.deltaTime;
-                if(addTime >= moveDurTime)
+                if(transform.position.x == targetPos.x)
                 {
                     waitTime = Random.Range(2, 3);
                     moveOnOff = false;      // 이동 완료
                     anim.SetBool("Walk", false);
                 }
+
                 else
                 {
-                    anim.SetBool("Walk", true);
                     // 목표 지점으로 이동
-                    dirVec = (targetPos - transform.position).normalized;
+                    //dirVec = (targetPos - transform.position).normalized;
                     transform.position = Vector2.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
 
-                    // 목표 지점을 바라보도록
-                    Vector3 scale = transform.localScale;
-                    // 타겟의 x좌표 기준
-                    scale.x = (targetPos.x < transform.position.x) ? 1 : -1;    // 캐릭터Sprite가 왼쪽을 보고 있어서 좌우 방향 바꿈
-                    transform.localScale = scale;
+                    anim.SetBool("Walk", true);
+                    // 지금은 x축만 계산하면됨 >> Vector2로 계산하는건 필요 이상으로 계산이 들어가서 불필요
+                    Vector2 ePos = transform.position;
+                    ePos.x = Mathf.MoveTowards(transform.position.x, targetPos.x, moveSpeed * Time.deltaTime);
+                    transform.position = ePos;
+
+                    // 목표 지점을 바라보도록 
+                    Vector2 dir = transform.right;
+                    if(targetPos.x != transform.position.x) // 멈춰있을 때는 안 바꿈
+                    {
+                        dir.x = (targetPos.x < transform.position.x) ? -1f : 1f;
+                        transform.right = dir;
+                    }
                 }
             }
         }
@@ -114,7 +122,7 @@ namespace AYO
         public void CombatMode()
         {
             // 플레이어 방향
-            //playerDir = (transform.position - player.transform.position).normalized;
+            playerDir = (transform.position - player.transform.position).normalized;
             // 플레이어와 거리
             distance = Vector3.Distance(player.transform.position, transform.position);
             // 플레이어 위치 저장
