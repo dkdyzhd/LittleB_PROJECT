@@ -6,13 +6,27 @@ namespace AYO
 {
     public class ENPCColider : MonoBehaviour
     {
-        private void OnCollisionEnter2D(Collision2D collision)
-        {
-            
-        }
+        [SerializeField] private ENPCStateController stateController;
+        [SerializeField] private GameObject player;
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            
+            if (collision.gameObject.tag == "Player")
+            {
+                stateController.SetAIState(ENPCAIState.AI_Combat);
+                stateController.ToggleAggro(true);
+            }
         }
+
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            if (collision.gameObject.tag == "Player")
+            {
+                stateController.ToggleAggro(false);
+                stateController.SetLastSeenPlayerPos(player.transform.position);
+            }
+        }
+
+        
     }
 }
