@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5255954e761f2649986ec4e135f0475, type: 3}
+  m_Name: SpringEmerald
+  m_EditorClassIdentifier: 
+  outputItem: {fileID: 11400000, guid: d0bb8259ea4b80848b7f29c5e9bcc222, type: 2}
+  outputQuantity: 1
+  ingredients:
+  - item: {fileID: 11400000, guid: 18a4d69a1af031248a136fb097e921f8, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: e9ebe4a9da56c4647aa5022dc592fcaa, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: dac649e1e5196f94eb633709c14e012f, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: adb4081047a34a142863166d07dc6079, type: 2}
+    quantity: 1

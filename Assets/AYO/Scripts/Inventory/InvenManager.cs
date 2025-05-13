@@ -12,19 +12,27 @@ namespace AYO
         
         [SerializeField] private InventoryUI invenUI;
 
+        // 아이템이 있는지 확인
+        public bool HasItem(ItemData item, int quantity)
+        {
+            foreach (SlotData slotData in slotDataList)
+            {
+                if(slotData.GetItemData() == item)
+                {
+                    if(slotData.GetItemCount() >= quantity)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
 
         // 스택이 가능한 같은 아이템을 가지고 있다면 그 인덱스를 반환
         public int GetExistItemStackable(ItemData itemData, out SlotData resultData)    
         {
             for (int i = 0; i < slotDataList.Count; i++)
             {
-                //if(slotDataList.GetSlotItemData(i) == itemData)
-                //{
-                //    resultData = slotDataList.GetSlotData(i);
-                //    return i;
-                //}
-
-                //SlotData currentSlot = slotDataList[i];
                 if (slotDataList[i] != null && slotDataList[i].GetItemData() == itemData)
                 {
                     resultData = slotDataList[i];
@@ -59,7 +67,6 @@ namespace AYO
             int i = 0;
             for (i = 0;i < slotDataList.Count;i++)      //데이터 리스트의 번호만 알려줌
             {
-                //SlotData currentslot = slotDataList[i];
                 if (slotDataList[i].GetItemData() == null) // (currentslot.GetItemData() == null
                 {
                     break;
