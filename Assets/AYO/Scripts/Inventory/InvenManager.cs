@@ -94,7 +94,7 @@ namespace AYO
                 result.SetSlotItemCount(-quantity);
                 if(result.GetItemCount() <= 0)
                 {   // 다쓰면 아이템데이터가 퀵슬롯에서 없어지도록
-                    slotDataList[slotIndex] = null;
+                    slotDataList[slotIndex].SetSlotItemData(null);
                 }
             }
 

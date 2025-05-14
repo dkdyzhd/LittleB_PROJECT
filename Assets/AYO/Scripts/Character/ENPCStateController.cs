@@ -52,7 +52,6 @@ namespace AYO
         }
         private void Update()
         {
-            //PatrolMove();
             ENPCAI();
         }
         public void SetAIState(ENPCAIState state)
@@ -80,13 +79,13 @@ namespace AYO
             }
         }
 
-        public void ChangeDir()
+        public void ChangeDir(Vector3 targetP)
         {
             // 목표 지점을 바라보도록 
             Vector2 dir = transform.right;
-            if (targetPos.x != transform.position.x) // 멈춰있을 때는 안 바꿈
+            if (targetP.x != transform.position.x) // 멈춰있을 때는 안 바꿈
             {
-                dir.x = (targetPos.x < transform.position.x) ? -1f : 1f;
+                dir.x = (targetP.x < transform.position.x) ? -1f : 1f;
                 transform.right = dir;
             }
         }
@@ -101,7 +100,7 @@ namespace AYO
             transform.position = ePos;
 
             // 목표 지점을 바라보도록 
-            ChangeDir();
+            ChangeDir(targetP);
         }
 
         public void Patrol()
@@ -156,17 +155,15 @@ namespace AYO
         public void AggroTrace()
         {
             //targetPos = player.transform.position;
-
             MoveTo(player.transform.position);
         }
 
         public void NormalTrace()
         {
-            //targetPos = latestPlayerPos;
             
             MoveTo(lastSeenPlayerPos);
-
-            if (transform.position.x == targetPos.x)
+            
+            if (transform.position.x == lastSeenPlayerPos.x)
             {
                 waitTime = 1.0f;        // 구별을 주기 위해 잠시 대기 시간 걸기
                 moveOn = false;      // 이동 완료
@@ -200,9 +197,11 @@ namespace AYO
                     // 플레이어와 거리
                     float distance = Mathf.Abs(player.transform.position.x - transform.position.x);
                     Debug.Log("플레이어 거리: " + distance);
+
                     if (aggroOn)
                     {
-                        if(distance <= canAttackDis)
+                        AggroTrace();
+                        if (distance <= canAttackDis)
                         {
                             Attack();
                         }
