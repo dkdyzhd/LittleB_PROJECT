@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab65c7b07317dfa40839335b9e9a0d68, type: 3}
-  m_Name: Topaz
+  m_Name: Winter Sapphire
   m_EditorClassIdentifier: 
-  itemID: IT030205
-  itemName: "\uAC00\uC744\uC758 \uD1A0\uD30C\uC988"
-  itemIcon: {fileID: 21300000, guid: 91dd702b2af7c6b458b1b046a7abbb52, type: 3}
-  inspectText: "\uAC00\uC744 \uBC14\uB78C\uC758 \uC815\uB839\uC5D0\uAC8C\uC11C \uBC1B\uC740
-    \uD669\uAE08\uBE5B \uBCF4\uC11D. \uBCF4\uACE0 \uC788\uC73C\uBA74 \uC660\uC9C0
-    \uD761\uC871\uD55C \uB290\uB08C\uC774 \uB4E0\uB2E4"
+  itemID: IT030206
+  itemName: "\uACA8\uC6B8\uC758 \uC0AC\uD30C\uC774\uC5B4"
+  itemIcon: {fileID: 21300000, guid: 4bfea5f7503baef4aa8a4fe47452e24c, type: 3}
+  inspectText: "\uACA8\uC6B8 \uBC14\uB78C\uC758 \uC815\uB839\uC5D0\uAC8C\uC11C \uBC1B\uC740
+    \uD478\uB978\uBE5B \uBCF4\uC11D. \uC5BC\uC74C\uCC98\uB7FC \uCC28\uAC11\uB2E4."
   isStackable: 0
   maxStackAmount: 0
   isDispoable: 0

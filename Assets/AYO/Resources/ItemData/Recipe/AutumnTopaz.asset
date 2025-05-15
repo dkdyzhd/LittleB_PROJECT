@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5255954e761f2649986ec4e135f0475, type: 3}
+  m_Name: AutumnTopaz
+  m_EditorClassIdentifier: 
+  outputItem: {fileID: 11400000, guid: 469bb6703bab9f144a0e542fca820d21, type: 2}
+  outputQuantity: 1
+  ingredients:
+  - item: {fileID: 11400000, guid: d66b62ace272a1c48a8f9d0d54c7e8ea, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: ab5966eb74173c14a8ebc002703b4082, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: ff6414ece295cf6409003b7104f42938, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: b88a34ee45e8c7140b9503f56f166eb3, type: 2}
+    quantity: 1

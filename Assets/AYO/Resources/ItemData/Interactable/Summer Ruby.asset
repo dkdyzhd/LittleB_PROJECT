@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab65c7b07317dfa40839335b9e9a0d68, type: 3}
-  m_Name: Sapphire
+  m_Name: Summer Ruby
   m_EditorClassIdentifier: 
-  itemID: IT030206
-  itemName: "\uACA8\uC6B8\uC758 \uC0AC\uD30C\uC774\uC5B4"
-  itemIcon: {fileID: 21300000, guid: 4bfea5f7503baef4aa8a4fe47452e24c, type: 3}
-  inspectText: "\uACA8\uC6B8 \uBC14\uB78C\uC758 \uC815\uB839\uC5D0\uAC8C\uC11C \uBC1B\uC740
-    \uD478\uB978\uBE5B \uBCF4\uC11D. \uC5BC\uC74C\uCC98\uB7FC \uCC28\uAC11\uB2E4."
+  itemID: IT030204
+  itemName: "\uC5EC\uB984\uC758 \uB8E8\uBE44"
+  itemIcon: {fileID: 21300000, guid: 1da803db31bea394299d63f0d4fb74e7, type: 3}
+  inspectText: "\uC5EC\uB984 \uBC14\uB78C\uC758 \uC815\uB839\uC5D0\uAC8C\uC11C \uBC1B\uC740
+    \uBD89\uC740\uC0C9 \uBCF4\uC11D. \uC190\uC5D0 \uC624\uB798 \uC950\uACE0 \uC788\uC73C\uBA74
+    \uC5F4\uAE30\uAC00 \uB290\uAEF4\uC9C4\uB2E4."
   isStackable: 0
   maxStackAmount: 0
   isDispoable: 0

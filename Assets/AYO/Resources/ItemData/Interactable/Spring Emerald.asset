@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab65c7b07317dfa40839335b9e9a0d68, type: 3}
-  m_Name: Ruby
+  m_Name: Spring Emerald
   m_EditorClassIdentifier: 
-  itemID: IT030204
-  itemName: "\uC5EC\uB984\uC758 \uB8E8\uBE44"
-  itemIcon: {fileID: 21300000, guid: 1da803db31bea394299d63f0d4fb74e7, type: 3}
-  inspectText: "\uC5EC\uB984 \uBC14\uB78C\uC758 \uC815\uB839\uC5D0\uAC8C\uC11C \uBC1B\uC740
-    \uBD89\uC740\uC0C9 \uBCF4\uC11D. \uC190\uC5D0 \uC624\uB798 \uC950\uACE0 \uC788\uC73C\uBA74
-    \uC5F4\uAE30\uAC00 \uB290\uAEF4\uC9C4\uB2E4."
+  itemID: IT030203
+  itemName: "\uBD04\uC758 \uC5D0\uBA54\uB784\uB4DC"
+  itemIcon: {fileID: 21300000, guid: 6fc9eda01cf56034d938b9e7a9e9f486, type: 3}
+  inspectText: "\uBD04 \uBC14\uB78C\uC758 \uC815\uB839\uB4E4\uC5D0\uAC8C\uC11C \uBC1B\uC740
+    \uB179\uC0C9 \uBCF4\uC11D. \uC660\uC9C0 \uB530\uB73B\uD55C \uB290\uB08C\uC774
+    \uB4E0\uB2E4."
   isStackable: 0
   maxStackAmount: 0
   isDispoable: 0

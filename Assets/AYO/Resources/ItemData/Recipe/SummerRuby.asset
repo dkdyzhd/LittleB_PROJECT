@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5255954e761f2649986ec4e135f0475, type: 3}
+  m_Name: SummerRuby
+  m_EditorClassIdentifier: 
+  outputItem: {fileID: 11400000, guid: af8bd97a24bb6944fb19a7ec31a6fda2, type: 2}
+  outputQuantity: 1
+  ingredients:
+  - item: {fileID: 11400000, guid: e056ddbe559bfe54bbbc73ff5588fd1b, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: 8740176b4a683024c9df588dd88bf6e8, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: 11b41490494bb9d49ade040e49855734, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: 1e3d2ac98e08c9f479b661a20d83b085, type: 2}
+    quantity: 1

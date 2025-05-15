@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: IT010000
   itemName: "\uBD95\uB300"
-  itemIcon: {fileID: 21300000, guid: 284ff5d965ff2944f92f0327c3ce0828, type: 3}
+  itemIcon: {fileID: 21300000, guid: 0c9e2e59bc7b3af469dcd4ee589887df, type: 3}
   inspectText: "\uC0AC\uC6A9 \uC2DC \uCCB4\uB825\uC744 1\uCE78 \uD68C\uBCF5\uD55C\uB2E4"
   isStackable: 1
-  maxStackAmount: 0
+  maxStackAmount: 99
   isDispoable: 1
   isExpendable: 1
   itemEffectID: SK000000

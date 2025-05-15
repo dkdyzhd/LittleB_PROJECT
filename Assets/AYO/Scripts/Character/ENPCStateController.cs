@@ -41,6 +41,7 @@ namespace AYO
         [Header("공격 가능 거리")]
         [SerializeField] private float canAttackDis;     // 공격가능 거리
         private bool aggroOn;
+        private bool isAttacking;
         private Vector3 lastSeenPlayerPos;
 
         private void Start()
@@ -49,6 +50,7 @@ namespace AYO
             waitTime = Random.Range(2, 3);
             
             SetAIState(ENPCAIState.AI_Patrol);
+            isAttacking = false;
         }
         private void Update()
         {
@@ -92,6 +94,8 @@ namespace AYO
 
         public void MoveTo(Vector3 targetP)
         {
+            if (isAttacking) { return; }
+
             anim.SetBool("Walk", true);
 
             // 지금은 x축만 계산하면됨 >> Vector2로 계산하는건 필요 이상으로 계산이 들어가서 불필요
@@ -134,9 +138,6 @@ namespace AYO
                 else
                 {
                     // 목표 지점으로 이동
-                    //dirVec = (targetPos - transform.position).normalized;
-                    //transform.position = Vector2.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
-
                     MoveTo(targetPos);
                 }
             }
@@ -154,7 +155,6 @@ namespace AYO
 
         public void AggroTrace()
         {
-            //targetPos = player.transform.position;
             MoveTo(player.transform.position);
         }
 
@@ -175,13 +175,27 @@ namespace AYO
 
         public void Attack()
         {
-            anim.SetBool("Walk", false);
-            anim.SetTrigger("Trigger_Attack");
+            if(!isAttacking)
+            {
+                moveOn = false;
+                anim.SetBool("Walk", false);
+                anim.SetTrigger("Trigger_Attack");
+
+                isAttacking = true;
+                StartCoroutine(DelayAfterAttack());
+            }
         }
 
         public void Combat()
         {
             //To do :  AI _Combat용 함수 구현
+        }
+
+        IEnumerator DelayAfterAttack()
+        {
+            yield return new WaitForSeconds(1.5f);
+            moveOn = true;
+            isAttacking = false;
         }
 
         public void ENPCAI()
@@ -200,7 +214,6 @@ namespace AYO
 
                     if (aggroOn)
                     {
-                        AggroTrace();
                         if (distance <= canAttackDis)
                         {
                             Attack();

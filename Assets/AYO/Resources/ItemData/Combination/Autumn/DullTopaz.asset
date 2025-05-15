@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86ee73ee563853046a618315a0afc051, type: 3}
+  m_Name: DullTopaz
+  m_EditorClassIdentifier: 
+  itemID: 
+  itemName: "\uBE5B \uBC14\uB79C \uD1A0\uD30C\uC988"
+  itemIcon: {fileID: 0}
+  inspectText: "\uD0C1\uD55C \uBE5B\uC758 \uD1A0\uD30C\uC988. \uC5B4\uB514\uC5D0
+    \uC4F0\uB294 \uBB3C\uAC74\uC77C\uAE4C?"
+  isStackable: 0
+  maxStackAmount: 0
+  isDispoable: 0
+  combinationID: 

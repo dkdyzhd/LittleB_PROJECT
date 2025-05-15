@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5255954e761f2649986ec4e135f0475, type: 3}
+  m_Name: WinterSapphire
+  m_EditorClassIdentifier: 
+  outputItem: {fileID: 11400000, guid: e826df4d135d973469f0cac7a3127482, type: 2}
+  outputQuantity: 1
+  ingredients:
+  - item: {fileID: 11400000, guid: aff14506be5a91447af49d655e432f1d, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: 1c059199d3605ee4fac942caf7abb51c, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: 13112c52bfc0da64bb28b21ca328c111, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: 066c02c604f5ed24dabc14407003ba30, type: 2}
+    quantity: 1
