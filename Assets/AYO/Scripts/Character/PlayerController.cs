@@ -243,7 +243,11 @@ namespace AYO
         {
             return false;
         }
-
+         public void KnockBack()
+        {
+            // 밀리고 넉백
+            Debug.Log("KnockBack!");
+        }
         
     }
 }

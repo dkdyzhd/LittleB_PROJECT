@@ -210,7 +210,7 @@ namespace AYO
                 case ENPCAIState.AI_Combat:
                     // 플레이어와 거리
                     float distance = Mathf.Abs(player.transform.position.x - transform.position.x);
-                    Debug.Log("플레이어 거리: " + distance);
+                    //Debug.Log("플레이어 거리: " + distance);
 
                     if (aggroOn)
                     {
