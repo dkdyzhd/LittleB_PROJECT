@@ -9,6 +9,7 @@ namespace AYO
         [SerializeField] private KnifeSkill skill;
         private PlayerController playerCtrler;
         private bool isDamageActive;
+        private Vector3 contactVec;
 
         private void OnEnable()
         {
@@ -19,9 +20,10 @@ namespace AYO
         {
             if(collision.gameObject.tag == "Player" && !isDamageActive)
             {
+                // contactVec = 구하기
                 isDamageActive = true;
                 playerCtrler = collision.GetComponent<PlayerController>();
-                skill.Attack(playerCtrler);
+                skill.Attack(playerCtrler, contactVec);
                 Debug.Log("공격당함!");
             }
         }

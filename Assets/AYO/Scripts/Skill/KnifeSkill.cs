@@ -8,10 +8,10 @@ namespace AYO
     {
         [SerializeField] private int skillDamage;
         
-        public void Attack(PlayerController pc)
+        public void Attack(PlayerController pc, Vector3 v)
         {
             pc.TakeDamage(skillDamage);
-            pc.KnockBack();
+            pc.KnockBack(v);
         }
     }
 }

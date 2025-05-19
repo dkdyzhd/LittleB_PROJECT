@@ -10,7 +10,8 @@ namespace AYO
         [Header("플레이어 HP")]
         [SerializeField] private int playerHP;
 
-        [Header("지면 체크 및 움직임")]
+        [Header("상태 체크 및 움직임")]
+        [SerializeField] private float knockbackDuration = 0.2f;
         [SerializeField] private float groundCheckWidthMultiplier = 0.9f; // 지면 체크 너비 (캐릭터 크기 대비)
         [SerializeField] private float groundCheckHeight = 0.1f;         // 지면 체크 높이
         [SerializeField] private LayerMask groundLayer;
@@ -23,12 +24,15 @@ namespace AYO
         private Rigidbody2D rb;
         private Animator ani;
         private SpriteRenderer sp;
+
+        [Header("입력매니저")]
         [SerializeField] private PlayerInputEventManager pInputManager;
 
         // 상태값
         private bool isGrounded;
         private bool isJumping;
         private bool reachedApex;
+        private bool isknockbacking;
 
         [Header("Sprites")]
         [SerializeField] private Sprite defaultSprite;
@@ -98,6 +102,9 @@ namespace AYO
         /// </summary>
         private void MoveCharacter(Vector2 direction)
         {
+            // 넉백 상태일 때는 리턴
+            if (isknockbacking) return;
+
             if(isGrounded)
             {
                 if (direction != Vector2.zero)
@@ -244,10 +251,20 @@ namespace AYO
         {
             return false;
         }
-        public void KnockBack()
+        public void KnockBack(Vector3 v)
         {
             // 밀리고 넉백
-            rb.AddForce(new Vector3(-15.0f, 0.0f, 0.0f), ForceMode2D.Impulse);
+            if (!isknockbacking && knockbackDuration > 0)
+            {
+                isknockbacking = true;
+                ani.SetBool("IsRun", false);
+                rb.AddForce(-v, ForceMode2D.Impulse);
+
+                knockbackDuration -= Time.deltaTime;
+
+                if (knockbackDuration <= 0) return;
+            }
+            
             Debug.Log("KnockBack!");
         }
 
@@ -257,5 +274,10 @@ namespace AYO
             Debug.Log($"현재 HP : " + playerHP);
         }
 
+        IEnumerator KnockBackRoutine()
+        {
+            yield return new WaitForSeconds(knockbackDuration);
+            isknockbacking = false;
+        }
     }
 }
