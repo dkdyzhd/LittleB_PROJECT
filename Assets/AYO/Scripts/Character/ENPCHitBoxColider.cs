@@ -6,19 +6,25 @@ namespace AYO
 {
     public class ENPCHitBoxColider : MonoBehaviour
     {
-        [SerializeField] private HyenaSkill skill;
+        [SerializeField] private KnifeSkill skill;
         private PlayerController playerCtrler;
+        private bool isDamageActive;
+
+        private void OnEnable()
+        {
+            isDamageActive = false;
+        }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if(collision.gameObject.tag == "Player")
+            if(collision.gameObject.tag == "Player" && !isDamageActive)
             {
+                isDamageActive = true;
                 playerCtrler = collision.GetComponent<PlayerController>();
-
-                //To do : 스킬
-                //skill.Attack(); 흠...... 스킬 재활용가능하도록
+                skill.Attack(playerCtrler);
                 Debug.Log("공격당함!");
             }
         }
+
     }
 }

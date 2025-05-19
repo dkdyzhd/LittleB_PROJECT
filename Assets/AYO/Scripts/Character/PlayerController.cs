@@ -7,6 +7,10 @@ namespace AYO
 {
     public class PlayerController : MonoBehaviour, INavigateInputTarget
     {
+        [Header("플레이어 HP")]
+        [SerializeField] private int playerHP;
+
+        [Header("지면 체크 및 움직임")]
         [SerializeField] private float groundCheckWidthMultiplier = 0.9f; // 지면 체크 너비 (캐릭터 크기 대비)
         [SerializeField] private float groundCheckHeight = 0.1f;         // 지면 체크 높이
         [SerializeField] private LayerMask groundLayer;
@@ -14,9 +18,6 @@ namespace AYO
         [SerializeField] private float jumpForce = 5f;
         [SerializeField] private float speed = 3f;
         private Vector2 v;
-
-        // 대화 시스템
-        //private DialogueManager dialogueManager;
 
         // 컴포넌트
         private Rigidbody2D rb;
@@ -243,11 +244,18 @@ namespace AYO
         {
             return false;
         }
-         public void KnockBack()
+        public void KnockBack()
         {
             // 밀리고 넉백
+            rb.AddForce(new Vector3(-15.0f, 0.0f, 0.0f), ForceMode2D.Impulse);
             Debug.Log("KnockBack!");
         }
-        
+
+        public void TakeDamage(int life)
+        {
+            playerHP -= life;
+            Debug.Log($"현재 HP : " + playerHP);
+        }
+
     }
 }
