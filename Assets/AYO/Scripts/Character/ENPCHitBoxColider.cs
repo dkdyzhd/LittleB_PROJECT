@@ -20,9 +20,10 @@ namespace AYO
         {
             if(collision.gameObject.tag == "Player" && !isDamageActive)
             {
-                // contactVec = 구하기
                 isDamageActive = true;
                 playerCtrler = collision.GetComponent<PlayerController>();
+                contactVec = (playerCtrler.transform.position - skill.transform.position).normalized ;
+
                 skill.Attack(playerCtrler, contactVec);
                 Debug.Log("공격당함!");
             }

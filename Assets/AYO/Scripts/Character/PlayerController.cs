@@ -11,7 +11,7 @@ namespace AYO
         [SerializeField] private int playerHP;
 
         [Header("상태 체크 및 움직임")]
-        [SerializeField] private float knockbackDuration = 0.2f;
+        [SerializeField] private float knockbackDuration = 1.0f;
         [SerializeField] private float groundCheckWidthMultiplier = 0.9f; // 지면 체크 너비 (캐릭터 크기 대비)
         [SerializeField] private float groundCheckHeight = 0.1f;         // 지면 체크 높이
         [SerializeField] private LayerMask groundLayer;
@@ -19,6 +19,7 @@ namespace AYO
         [SerializeField] private float jumpForce = 5f;
         [SerializeField] private float speed = 3f;
         private Vector2 v;
+        private float knockbackTimer;
 
         // 컴포넌트
         private Rigidbody2D rb;
@@ -63,9 +64,21 @@ namespace AYO
             //    return;
             //}
 
+            if (isknockbacking)
+            {
+                knockbackTimer -= Time.deltaTime;
+
+                if(knockbackTimer < 0)
+                {
+                    isknockbacking = false;
+                }
+                return;
+            }
+
             HandleJump();    
             UpdateSprite();
             MoveCharacter(v);
+
         }
 
         private void FixedUpdate()
@@ -254,18 +267,14 @@ namespace AYO
         public void KnockBack(Vector3 v)
         {
             // 밀리고 넉백
-            if (!isknockbacking && knockbackDuration > 0)
+            if (!isknockbacking)
             {
                 isknockbacking = true;
+                knockbackTimer = knockbackDuration;
                 ani.SetBool("IsRun", false);
-                rb.AddForce(-v, ForceMode2D.Impulse);
-
-                knockbackDuration -= Time.deltaTime;
-
-                if (knockbackDuration <= 0) return;
+                rb.AddForce(v * 13.0f, ForceMode2D.Impulse);
+                Debug.Log("KnockBack!");
             }
-            
-            Debug.Log("KnockBack!");
         }
 
         public void TakeDamage(int life)
@@ -273,11 +282,6 @@ namespace AYO
             playerHP -= life;
             Debug.Log($"현재 HP : " + playerHP);
         }
-
-        IEnumerator KnockBackRoutine()
-        {
-            yield return new WaitForSeconds(knockbackDuration);
-            isknockbacking = false;
-        }
+        
     }
 }

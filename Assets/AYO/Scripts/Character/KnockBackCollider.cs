@@ -17,7 +17,7 @@ namespace AYO
                 playerCtrler = collision.gameObject.GetComponent<PlayerController>();
                 contactVec = collision.contacts[0].normal;
                 //³Ë¹é
-                playerCtrler.KnockBack(contactVec);
+                playerCtrler.KnockBack(-contactVec);
             }
         }
     }
