@@ -33,7 +33,7 @@ namespace AYO
         private bool isGrounded;
         private bool isJumping;
         private bool reachedApex;
-        private bool isknockbacking;
+        private bool isKnockbacking;
 
         [Header("Sprites")]
         [SerializeField] private Sprite defaultSprite;
@@ -63,14 +63,15 @@ namespace AYO
             //    rb.velocity = new Vector2(0, rb.velocity.y);
             //    return;
             //}
+            
 
-            if (isknockbacking)
+            if (isKnockbacking)
             {
                 knockbackTimer -= Time.deltaTime;
 
                 if(knockbackTimer < 0)
                 {
-                    isknockbacking = false;
+                    isKnockbacking = false;
                 }
                 return;
             }
@@ -116,7 +117,7 @@ namespace AYO
         private void MoveCharacter(Vector2 direction)
         {
             // 넉백 상태일 때는 리턴
-            if (isknockbacking) return;
+            if (isKnockbacking) return;
 
             if(isGrounded)
             {
@@ -267,9 +268,9 @@ namespace AYO
         public void KnockBack(Vector3 v)
         {
             // 밀리고 넉백
-            if (!isknockbacking)
+            if (!isKnockbacking)
             {
-                isknockbacking = true;
+                isKnockbacking = true;
                 knockbackTimer = knockbackDuration;
                 ani.SetBool("IsRun", false);
                 rb.AddForce(v * 13.0f, ForceMode2D.Impulse);

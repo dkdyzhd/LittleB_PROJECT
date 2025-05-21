@@ -13,9 +13,14 @@ namespace AYO
             void OnNavigate(InputAction.CallbackContext context);
         }
 
-        public interface ISpaceInputTarget
+        public interface ISpaceInputTarget  // Space
         {
 
+        }
+
+        public interface ILeftMouseButtonTarget // ÁÂÅ¬¸¯
+        {
+            void OnLeftClick(InputAction.CallbackContext context);
         }
     }
 }
