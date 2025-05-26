@@ -10,14 +10,34 @@ namespace AYO
         [SerializeField] private float rigWeight;       // 중력 가중치
         [SerializeField] private float fireRange;       // 사정 거리..?
 
+        private ENPCStateController enpc;
+        private float shootDir;
+        private int damage;
+
+
         private void Update()
         {
-            // 움직이게하기
-            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+            transform.Translate( new Vector2(shootDir, 0) * speed * Time.deltaTime);
+        }
+
+        public void SetBulletDir(float bulletDir)
+        {
+            shootDir = bulletDir;
+        }
+
+        public void SetDamage(int skillDamage)
+        {
+            damage = skillDamage;
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
+            if (collision.gameObject.CompareTag("ENPC"))
+            {
+                // damage 입히기
+                enpc = collision.gameObject.GetComponent<ENPCStateController>();
+                enpc.GetDamage(damage);
+            }
             // 충돌하면 사라짐
             Destroy(gameObject);
         }

@@ -10,7 +10,7 @@ namespace AYO
         
         public void Attack(PlayerController pc, Vector3 v)
         {
-            pc.TakeDamage(skillDamage);
+            pc.GetDamage(skillDamage);
             pc.KnockBack(v);
         }
     }

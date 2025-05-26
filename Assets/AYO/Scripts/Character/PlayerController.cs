@@ -2,10 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Windows;
 
 namespace AYO
 {
-    public class PlayerController : MonoBehaviour, INavigateInputTarget
+    public class PlayerController : MonoBehaviour, INavigateInputTarget, ILeftMouseButtonTarget
     {
         [Header("플레이어 HP")]
         [SerializeField] private int playerHP;
@@ -18,8 +19,12 @@ namespace AYO
         [SerializeField] private float groundadjusted = 0.1f;
         [SerializeField] private float jumpForce = 5f;
         [SerializeField] private float speed = 3f;
+        [SerializeField] private float shootDelay = 0.5f;
         private Vector2 v;
         private float knockbackTimer;
+        private float bulletDir;
+        private bool isShooting;
+        private float shootingTimer;
 
         // 컴포넌트
         private Rigidbody2D rb;
@@ -28,6 +33,9 @@ namespace AYO
 
         [Header("입력매니저")]
         [SerializeField] private PlayerInputEventManager pInputManager;
+
+        [Header("Skill")]
+        [SerializeField] private SlingShotSkill skill;
 
         // 상태값
         private bool isGrounded;
@@ -51,6 +59,7 @@ namespace AYO
             sp = GetComponent<SpriteRenderer>();
             ani = GetComponent<Animator>();
             pInputManager.NavigateTarget = this;
+            pInputManager.LeftClickTarget = this;
 
             //dialogueManager = FindObjectOfType<DialogueManager>();
         }
@@ -63,7 +72,16 @@ namespace AYO
             //    rb.velocity = new Vector2(0, rb.velocity.y);
             //    return;
             //}
-            
+            if (isShooting)
+            {
+                shootingTimer -= Time.deltaTime;
+
+                if (shootingTimer < 0)
+                {
+                    isShooting = false;
+                }
+                return;
+            }
 
             if (isKnockbacking)
             {
@@ -134,6 +152,8 @@ namespace AYO
                     Vector3 scale = transform.localScale;
                     scale.x = (direction.x < 0) ? -Mathf.Abs(scale.x) : Mathf.Abs(scale.x);
                     transform.localScale = scale;
+
+                    bulletDir = scale.x;
                 }
                 else
                 {
@@ -278,11 +298,26 @@ namespace AYO
             }
         }
 
-        public void TakeDamage(int life)
+        public void GetDamage(int life)
         {
             playerHP -= life;
             Debug.Log($"현재 HP : " + playerHP);
         }
-        
+
+        public void OnLeftClick(UnityEngine.InputSystem.InputAction.CallbackContext context)
+        {
+            if(context.performed && isGrounded && !isShooting)
+            {
+                isShooting = true;
+                ani.SetBool("IsRun", false);
+                ani.SetTrigger("Shoot");
+                shootingTimer = shootDelay;
+            }
+        }
+
+        public void BulletShoot()
+        {
+            skill.Shoot(bulletDir);
+        }
     }
 }

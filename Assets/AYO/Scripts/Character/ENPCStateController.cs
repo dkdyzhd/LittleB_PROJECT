@@ -230,5 +230,11 @@ namespace AYO
                     break;
             }
         }
+
+        public void GetDamage(int damage)
+        {
+            maxHp -= damage;
+            Debug.Log($"ENPC Hp : " + maxHp);
+        }
     }
 }

@@ -6,56 +6,45 @@ using UnityEngine.InputSystem;
 
 namespace AYO
 {
-    public class SlingShotSkill : MonoBehaviour, ILeftMouseButtonTarget
+    public class SlingShotSkill : MonoBehaviour
     {
-        [Header("입력매니저")]
-        [SerializeField] private PlayerInputEventManager inputM;
-
         [Header("스킬")]
         [SerializeField] private Transform firePosition;
         [SerializeField] private GameObject rockPrefab;
-        [SerializeField] private float skillDamage;
-        [SerializeField] private float shootDelay = 0.5f;
+        [SerializeField] private int skillDamage;
+        //[SerializeField] private float shootDelay = 0.5f;
 
-        private bool isShooting;
-        private float shootingTimer;
+        private Projectile projectile;
 
-        private void Start()
-        {
-            inputM.LeftClickTarget = this;
-        }
+        //private bool isShooting;
+        //private float shootingTimer;
 
         private void Update()
         {
-            if (isShooting)
-            {
-                shootingTimer -= Time.deltaTime;
+            //if (isShooting)
+            //{
+            //    shootingTimer -= Time.deltaTime;
 
-                if (shootingTimer < 0)
-                {
-                    isShooting = false;
-                }
-                return;
-            }
+            //    if (shootingTimer < 0)
+            //    {
+            //        isShooting = false;
+            //    }
+            //    return;
+            //}
         }
 
-        public void Shoot()
+        public void Shoot(float dir)
         {
-            if (!isShooting)
-            {
-                isShooting = true;
+            // 발사체 생성
+            GameObject rockBullet = Instantiate(rockPrefab);
+            Debug.Log("bullet 생성");
+            projectile = rockBullet.GetComponent<Projectile>();
+            projectile.SetBulletDir(dir);
+            projectile.SetDamage(skillDamage);
 
-                // 발사체 생성
-                GameObject rockBullet = Instantiate(rockPrefab);
-                rockBullet.transform.position = firePosition.transform.position;
-                shootingTimer = shootDelay;
-            }
-
-        }
-
-        public void OnLeftClick(InputAction.CallbackContext context)
-        {
-            throw new System.NotImplementedException();
+            rockBullet.transform.position = firePosition.transform.position;
+            //rockBullet.gameObject.SetActive(true);
+            
         }
     }
 }
