@@ -12,5 +12,10 @@ namespace AYO
 
         public string itemEffectID;
         public float itemCooldown;
+
+        public override void Use()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

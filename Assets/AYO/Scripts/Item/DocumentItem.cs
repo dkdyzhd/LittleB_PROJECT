@@ -8,5 +8,10 @@ namespace AYO
     public class DocumentItem : ItemData
     {
         public Sprite imageToDisplay;
+
+        public override void Use()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

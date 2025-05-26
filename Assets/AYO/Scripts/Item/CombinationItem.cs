@@ -8,5 +8,10 @@ namespace AYO
     public class CombinationItem : ItemData
     {
         public string combinationID;
+
+        public override void Use()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

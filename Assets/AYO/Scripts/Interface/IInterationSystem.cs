@@ -15,6 +15,8 @@ namespace AYO
 
         private Vector2 offset = Vector2.zero;
 
+        private Collider2D[] hitColliders = new Collider2D[5];
+
         void Update()
         {
             DetectInteractable();
@@ -30,10 +32,10 @@ namespace AYO
         void DetectInteractable()
         {
             Vector2 centerPosition = (Vector2)transform.position + offset;
-            Collider2D[] hitColliders = Physics2D.OverlapCircleAll(centerPosition, interactionRange, interactLayer);
+            int count = Physics2D.OverlapCircleNonAlloc(centerPosition, interactionRange, hitColliders, interactLayer);
 
             // 현재 프레임에서 감지된 상호작용 가능 오브젝트가 없을 경우, null로 초기화
-            if (hitColliders.Length == 0)
+            if (count <= 0)
             {
                 currentInteractable = null;
                 return;

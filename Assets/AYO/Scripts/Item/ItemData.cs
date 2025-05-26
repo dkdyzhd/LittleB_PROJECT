@@ -6,7 +6,7 @@ using UnityEngine.UI;
 namespace AYO
 {
     [CreateAssetMenu (fileName ="ItemData", menuName = "Item / Item")]
-    public class ItemData : ScriptableObject    // 각 타입의 아이템들이 상속받을 클래스
+    public abstract class ItemData : ScriptableObject    // 각 타입의 아이템들이 상속받을 클래스
     {
         public string itemID;
         public string itemName;
@@ -19,5 +19,7 @@ namespace AYO
 
         [Header("Disposable")]
         public bool isDispoable;
+
+        public abstract void Use();
     }
 }
