@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a635a758c4c59a248877f5659853369d, type: 3}
+  m_Name: SummerRuby
+  m_EditorClassIdentifier: 
+  dataName: SummerRuby
+  itemID: IT030204
+  itemName: "\uC5EC\uB984\uC758 \uB8E8\uBE44"
+  itemIcon: {fileID: 21300000, guid: c55be2eda22e2e040a03123f93dd23db, type: 3}
+  inspectText: "\uC5EC\uB984 \uBC14\uB78C\uC758 \uC815\uB839\uC5D0\uAC8C\uC11C \uBC1B\uC740
+    \uBD89\uC740\uC0C9 \uBCF4\uC11D. \uC190\uC5D0 \uC624\uB798 \uC950\uACE0 \uC788\uC73C\uBA74
+    \uC5F4\uAE30\uAC00 \uB290\uAEF4\uC9C4\uB2E4."
+  isStackable: 0
+  maxStackAmount: 0
+  isDispoable: 0
+  ObjectRef: {fileID: 0}
+  playerObjectRef: {fileID: 0}

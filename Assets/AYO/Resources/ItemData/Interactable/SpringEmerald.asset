@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a635a758c4c59a248877f5659853369d, type: 3}
+  m_Name: SpringEmerald
+  m_EditorClassIdentifier: 
+  dataName: SpringEmerald
+  itemID: IT030203
+  itemName: "\uBD04\uC758 \uC5D0\uBA54\uB784\uB4DC"
+  itemIcon: {fileID: 21300000, guid: f5ef2f0b7527d7a4cbaa7e8da595bb43, type: 3}
+  inspectText: "\uBD04 \uBC14\uB78C\uC758 \uC815\uB839\uB4E4\uC5D0\uAC8C\uC11C \uBC1B\uC740
+    \uB179\uC0C9 \uBCF4\uC11D. \uC660\uC9C0 \uB530\uB73B\uD55C \uB290\uB08C\uC774
+    \uB4E0\uB2E4."
+  isStackable: 0
+  maxStackAmount: 0
+  isDispoable: 0
+  ObjectRef: {fileID: 0}
+  playerObjectRef: {fileID: 0}

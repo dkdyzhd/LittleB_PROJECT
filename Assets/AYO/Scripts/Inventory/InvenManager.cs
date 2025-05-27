@@ -43,19 +43,19 @@ namespace AYO
             return -1;  // 없으면 -1 반환
         }
 
-        public void AddItem(ItemData itemData)
+        public void AddItem(InteractionItem item)
         {
             // 스택가능한 아이템이라면
-            if(itemData.isStackable)
+            if(item.ItemData.isStackable)
             {
                 // GetExistItemStackable() 호출 -> 이미 존재하는 동일한 아이템찾기
                 //index : 슬롯의 위치 / result : 해당 슬롯의 SlotData
-                int index = GetExistItemStackable(itemData, out SlotData result);
+                int index = GetExistItemStackable(item.ItemData, out SlotData result);
                 if(result != null && index >= 0)
                 {
                     // 기존 아이템이 있으면  슬롯 아이템 count++ 
                     result.SetSlotItemCount(1);
-                    Debug.Log($" 기존 아이템 {itemData.itemName} 개수 증가: {result.GetItemCount()}");
+                    Debug.Log($" 기존 아이템 {item.ItemData.itemName} 개수 증가: {result.GetItemCount()}");
                     
                     // To do :  인벤토리 count에도 적용
                     invenUI.SetSlotUICount(index, result.GetItemCount());
@@ -75,10 +75,11 @@ namespace AYO
 
             // 새 아이템 추가
             SlotData slotdata = new SlotData();
-            slotdata.SetSlotItemData(itemData);
+            slotdata.SetSlotItemData(item.ItemData);
             slotdata.SetSlotItemCount(1);
+            slotdata.SetItemUse(item.OnUse);    // 아이템 사용 이벤트 넘겨주기
             slotDataList.Add(slotdata);
-            Debug.Log($" 새 아이템 추가: {itemData.itemName}, 개수: 1");
+            Debug.Log($" 새 아이템 추가: {item.ItemData.itemName}, 개수: 1");
 
             //slotDataList[i].SetSlotItemData(itemData);
             //slotDataList[i].SetSlotItemCount(1);

@@ -33,7 +33,7 @@ namespace AYO
         {
             Vector2 centerPosition = (Vector2)transform.position + offset;
             int count = Physics2D.OverlapCircleNonAlloc(centerPosition, interactionRange, hitColliders, interactLayer);
-
+            
             // 현재 프레임에서 감지된 상호작용 가능 오브젝트가 없을 경우, null로 초기화
             if (count <= 0)
             {
@@ -45,8 +45,11 @@ namespace AYO
             IInteractable nearestInteractable = null;
             Collider2D nearestCollider = null;
 
-            foreach (Collider2D hitCollider in hitColliders)
+            for (int i = 0; i < count; i++)
             {
+                Collider2D hitCollider = hitColliders[i];
+                if (hitCollider == null) continue; // 이건 안전망
+
                 Debug.Log($"감지된 오브젝트: {hitCollider.name}");
 
                 float distance = Vector2.Distance(centerPosition, hitCollider.transform.position);
@@ -59,6 +62,10 @@ namespace AYO
                     nearestCollider = hitCollider;
                 }
             }
+            //foreach (Collider2D hitCollider in hitColliders)
+            //{
+               
+            //}
 
             // 현재 주시 중인(currentInteractable) 오브젝트가 바뀌었는지 확인
             if (currentInteractable != nearestInteractable)

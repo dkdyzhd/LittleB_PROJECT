@@ -13,10 +13,11 @@ namespace AYO
         [SerializeField] private UltEvent onUse;
 
         public ItemData ItemData => itemData;
+        public UltEvent OnUse => onUse;
 
         public void OnInteract()
         {
-            invenManager.AddItem(itemData); //this 로 바꾸기 & this에서 itemData를 가져와서 Additem 코드 변경
+            invenManager.AddItem(this); //this 로 바꾸기 & this에서 itemData를 가져와서 Additem 코드 변경
             gameObject.SetActive(false);
         }
 

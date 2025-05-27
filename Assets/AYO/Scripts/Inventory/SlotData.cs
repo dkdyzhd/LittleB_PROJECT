@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UltEvents;
 
 namespace AYO
 {
@@ -9,6 +10,12 @@ namespace AYO
     {
         private ItemData slotItemData;
         private int count;
+        private UltEvent useItem;
+
+        public void SetItemUse(UltEvent use)
+        {
+            use = useItem;
+        }
 
         public void SetSlotItemCount(int i)
         {

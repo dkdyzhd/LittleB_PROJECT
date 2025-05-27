@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5255954e761f2649986ec4e135f0475, type: 3}
   m_Name: SpringEmerald
   m_EditorClassIdentifier: 
-  outputItem: {fileID: 11400000, guid: d0bb8259ea4b80848b7f29c5e9bcc222, type: 2}
+  outputItem: {fileID: 11400000, guid: 806496c9c6fecb440878d29e16a6898b, type: 2}
   outputQuantity: 1
   ingredients:
   - item: {fileID: 11400000, guid: 18a4d69a1af031248a136fb097e921f8, type: 2}

@@ -14,7 +14,7 @@ namespace AYO
 
         public void OnClick()
         {
-            currentItem.Use();
+
         }
 
         public ItemData Item
