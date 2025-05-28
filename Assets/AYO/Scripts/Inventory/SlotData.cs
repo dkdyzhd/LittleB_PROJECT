@@ -8,8 +8,8 @@ namespace AYO
     [System.Serializable]
     public class SlotData 
     {
-        private ItemData slotItemData;
         private int count;
+        private ItemData slotItemData;
         private UltEvent useItem;
 
         public void SetItemUse(UltEvent use)

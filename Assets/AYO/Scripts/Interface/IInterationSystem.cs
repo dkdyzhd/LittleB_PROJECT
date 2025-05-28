@@ -7,6 +7,7 @@ namespace AYO
     public class IInterationSystem : MonoBehaviour
     {
         private IInteractable currentInteractable;
+        [SerializeField] private PlayerController player;
 
         [SerializeField]
         private float interactionRange = 3f;
@@ -48,7 +49,7 @@ namespace AYO
             for (int i = 0; i < count; i++)
             {
                 Collider2D hitCollider = hitColliders[i];
-                if (hitCollider == null) continue; // 이건 안전망
+                if (hitCollider == null) continue; 
 
                 Debug.Log($"감지된 오브젝트: {hitCollider.name}");
 
@@ -60,6 +61,9 @@ namespace AYO
                     minDistance = distance;
                     nearestInteractable = interactable;
                     nearestCollider = hitCollider;
+
+                    // 플레이어가 상호작용가능한 오브젝트 넘겨주기 _ 20250528
+                    player.SetCurrentInteractable(nearestCollider);
                 }
             }
             //foreach (Collider2D hitCollider in hitColliders)

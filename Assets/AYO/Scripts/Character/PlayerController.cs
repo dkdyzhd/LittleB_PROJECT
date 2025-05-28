@@ -30,6 +30,7 @@ namespace AYO
         private Rigidbody2D rb;
         private Animator ani;
         private SpriteRenderer sp;
+        private Collider2D playerInteractableCollider;
 
         [Header("입력매니저")]
         [SerializeField] private PlayerInputEventManager pInputManager;
@@ -318,6 +319,20 @@ namespace AYO
         public void BulletShoot()
         {
             skill.Shoot(bulletDir);
+        }
+
+        public bool IsObjectNear(GameObject requireObj)
+        {
+            IInteractable rInteractable = requireObj.GetComponent<IInteractable>();
+            IInteractable interactable = playerInteractableCollider.GetComponent<IInteractable>();
+            //playerInteractableCollider.gameObject   => 게임오브젝트를 가져와서 비교할 것 !
+
+            return rInteractable == interactable;
+        }
+
+        public void SetCurrentInteractable(Collider2D nearestCollider)
+        {
+            playerInteractableCollider = nearestCollider;
         }
     }
 }

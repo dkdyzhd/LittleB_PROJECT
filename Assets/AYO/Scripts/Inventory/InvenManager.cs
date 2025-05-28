@@ -69,13 +69,14 @@ namespace AYO
             {
                 if (slotDataList[i].GetItemData() == null) // (currentslot.GetItemData() == null
                 {
+                    //slotDataList[i] = slotdata;       //*** 20250528_ 수정해야됨
                     break;
                 }
             }
 
             // 새 아이템 추가
             SlotData slotdata = new SlotData();
-            slotdata.SetSlotItemData(item.ItemData);
+            slotdata.SetSlotItemData(item.ItemData);     // *** 20250528_ 그냥 item 으로 아이템 자체를 넘겨주기
             slotdata.SetSlotItemCount(1);
             slotdata.SetItemUse(item.OnUse);    // 아이템 사용 이벤트 넘겨주기
             slotDataList.Add(slotdata);
@@ -90,6 +91,8 @@ namespace AYO
         {
             int index = GetExistItemStackable(item, out SlotData result);   //result가 null이면 -1을 반환
             int slotIndex = slotDataList.IndexOf(result);   // 따로 리스트의 인덱스를 뽑아내는 함수를g= 활용하여 저장
+            // slotDataList.Remove(result); => 수정하면서 고민
+
             if (result != null && index >= 0)
             {
                 result.SetSlotItemCount(-quantity);
