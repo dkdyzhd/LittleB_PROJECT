@@ -98,8 +98,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd7e15da4eb4064ebc5e4940bb7b344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemData: {fileID: 11400000, guid: 18a4d69a1af031248a136fb097e921f8, type: 2}
   invenManager: {fileID: 0}
+  itemData: {fileID: 11400000, guid: 18a4d69a1af031248a136fb097e921f8, type: 2}
+  onUse:
+    _PersistentCalls: []
+  objectRef: {fileID: 0}
 --- !u!61 &135259598275778256
 BoxCollider2D:
   m_ObjectHideFlags: 0

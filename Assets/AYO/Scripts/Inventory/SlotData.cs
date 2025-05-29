@@ -9,32 +9,37 @@ namespace AYO
     public class SlotData 
     {
         private int count;
-        private ItemData slotItemData;
-        private UltEvent useItem;
+        private InteractionItem item;
 
-        public void SetItemUse(UltEvent use)
-        {
-            use = useItem;
-        }
-
+        //private ItemData slotItemData;
+        //private UltEvent useItem;
         public void SetSlotItemCount(int i)
         {
             count += i;
         }
-
-        public void SetSlotItemData(ItemData itemData)
-        {
-            slotItemData = itemData;
-        }
-
         public int GetItemCount()
         {
             return count;
         }
 
+        public void SetSlotItem(InteractionItem interactionItem)
+        {
+            item = interactionItem;
+        }
+
+        public void GetItemUse()
+        {
+            
+        }
         public ItemData GetItemData()
         {
-            return slotItemData;
+            return item.ItemData;
         }
+
+
+        //public void SetSlotItemData(ItemData itemData)
+        //{
+        //    slotItemData = itemData;
+        //}
     }
 }

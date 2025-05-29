@@ -67,7 +67,7 @@ namespace AYO
             int i = 0;
             for (i = 0;i < slotDataList.Count;i++)      //데이터 리스트의 번호만 알려줌
             {
-                if (slotDataList[i].GetItemData() == null) // (currentslot.GetItemData() == null
+                if (slotDataList[i].GetItemData() == null) 
                 {
                     //slotDataList[i] = slotdata;       //*** 20250528_ 수정해야됨
                     break;
@@ -76,9 +76,8 @@ namespace AYO
 
             // 새 아이템 추가
             SlotData slotdata = new SlotData();
-            slotdata.SetSlotItemData(item.ItemData);     // *** 20250528_ 그냥 item 으로 아이템 자체를 넘겨주기
+            slotdata.SetSlotItem(item);     // *** 20250528_ 그냥 item 으로 아이템 자체를 넘겨주기
             slotdata.SetSlotItemCount(1);
-            slotdata.SetItemUse(item.OnUse);    // 아이템 사용 이벤트 넘겨주기
             slotDataList.Add(slotdata);
             Debug.Log($" 새 아이템 추가: {item.ItemData.itemName}, 개수: 1");
 
@@ -91,14 +90,15 @@ namespace AYO
         {
             int index = GetExistItemStackable(item, out SlotData result);   //result가 null이면 -1을 반환
             int slotIndex = slotDataList.IndexOf(result);   // 따로 리스트의 인덱스를 뽑아내는 함수를g= 활용하여 저장
-            // slotDataList.Remove(result); => 수정하면서 고민
+            
 
             if (result != null && index >= 0)
             {
                 result.SetSlotItemCount(-quantity);
                 if(result.GetItemCount() <= 0)
                 {   // 다쓰면 아이템데이터가 퀵슬롯에서 없어지도록
-                    slotDataList[slotIndex].SetSlotItemData(null);
+                    slotDataList.Remove(result);    // => 뒤 아이템들이 다 땡겨짐
+                    //slotDataList[slotIndex].SetSlotItemData(null);    // => 빈 칸이 그대로 남아있음
                 }
             }
 

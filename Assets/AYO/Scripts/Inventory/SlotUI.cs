@@ -12,11 +12,6 @@ namespace AYO
         [SerializeField] private TMPro.TextMeshProUGUI countText;        // 아이템 갯수
         private ItemData currentItem;                   // 받아올 아이템 저장
 
-        public void OnClick()
-        {
-
-        }
-
         public ItemData Item
         {
             get { return currentItem; }

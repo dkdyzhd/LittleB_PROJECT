@@ -143,5 +143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd7e15da4eb4064ebc5e4940bb7b344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemData: {fileID: 11400000, guid: adb4081047a34a142863166d07dc6079, type: 2}
   invenManager: {fileID: 0}
+  itemData: {fileID: 11400000, guid: adb4081047a34a142863166d07dc6079, type: 2}
+  onUse:
+    _PersistentCalls: []
+  objectRef: {fileID: 0}

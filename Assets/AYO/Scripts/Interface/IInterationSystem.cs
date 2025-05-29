@@ -34,7 +34,10 @@ namespace AYO
         {
             Vector2 centerPosition = (Vector2)transform.position + offset;
             int count = Physics2D.OverlapCircleNonAlloc(centerPosition, interactionRange, hitColliders, interactLayer);
-            
+
+            // 플레이어가 상호작용가능한 오브젝트 넘겨주기 _ 20250528
+            player.SetCurrentInteractable(hitColliders);
+
             // 현재 프레임에서 감지된 상호작용 가능 오브젝트가 없을 경우, null로 초기화
             if (count <= 0)
             {
@@ -62,8 +65,7 @@ namespace AYO
                     nearestInteractable = interactable;
                     nearestCollider = hitCollider;
 
-                    // 플레이어가 상호작용가능한 오브젝트 넘겨주기 _ 20250528
-                    player.SetCurrentInteractable(nearestCollider);
+                    
                 }
             }
             //foreach (Collider2D hitCollider in hitColliders)
