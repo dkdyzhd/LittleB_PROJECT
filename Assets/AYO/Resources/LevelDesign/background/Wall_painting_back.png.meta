@@ -1,0 +1,1698 @@
+fileFormatVersion: 2
+guid: 477797a03bc3f78429f6b7329b702170
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 240
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Wall_painting_back_0
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 2110
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d8952ab3128e6c4786172623a70fa3d
+      internalID: 1954126384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_1
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 2110
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52838c48a1786cd489018fefe9d6bd66
+      internalID: -1896909339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_2
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 2110
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 680af423127c3ea4faef48d7a04caf67
+      internalID: 1557725846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_3
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 2110
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 186df85f3338be24bbf9552704d5cd6f
+      internalID: 664200249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_4
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 2110
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5fefe93a1b50a545a5cd9c7a9c4b5ba
+      internalID: 1592721038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_5
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 2110
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fceea675125bc824aa95de3dbe6024c8
+      internalID: 817636667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_6
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 2110
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a89c3804ea2202345b22e2b6366ba619
+      internalID: 21500054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_7
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 2110
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cf6ed434867e8f4f905bc2b804d0a61
+      internalID: -802050384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_8
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 1870
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4267f699a90f03b4fb84bb9fadf1262f
+      internalID: 1928917487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_9
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 1870
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 327bc5a2c98ff304587ad16be09455ad
+      internalID: -1375358372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_10
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 1870
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1b352faa51104949be30e3d758d886a
+      internalID: -1885183418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_11
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 1870
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c291c0109c4f56d48a1862ef2031abb6
+      internalID: 85673991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_12
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 1870
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e87395fddff47b4e83df3e8d145f0fa
+      internalID: -1758538994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_13
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 1870
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb7c19c5ed688304d9ef1e3e5baf6948
+      internalID: 1953083313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_14
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 1870
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 611b268f9a96e5d48939b538f0540389
+      internalID: 1675052984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_15
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 1870
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1a7466b3927d2d4eb9965daf46221c9
+      internalID: 1717872821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_16
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 1630
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81e8a3af79d5f2147a05372a15faa98e
+      internalID: 1867773861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_17
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 1630
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a38d11587da0d64ab95816be52457c5
+      internalID: 271185756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_18
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 1630
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66281cc80a066eb48a109d96b94b4cd7
+      internalID: -1496092003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_19
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 1630
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ffa0c4f3aef549468f5663b420f6578
+      internalID: -706815463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_20
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 1630
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75500829272f8de4fadb04e346625441
+      internalID: 1212782470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_21
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 1630
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccae6347fbfbf0947bc61104dbdb471a
+      internalID: -1149976499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_22
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 1630
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 253d0e384de583c4d97b4e7c919b593c
+      internalID: 2080953766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_23
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 1630
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed0f1f3e97b58564bb903f4b9d1acf1d
+      internalID: -1869723471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_24
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 1390
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 929cede3640abba40aaaec9a16010d46
+      internalID: 408356682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_25
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 1390
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5291d26301e9b6441a70410a64eb308a
+      internalID: -1861261398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_26
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 1390
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dcfcd6dc27cb9a4e90d59a446e5b350
+      internalID: -1004407050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_27
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 1390
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04e82238dc4e3684795afda2b5f630c9
+      internalID: -711126659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_28
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 1390
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7184aa1daa2205f4882c82bfd7e94c34
+      internalID: 95360444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_29
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 1390
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6295d500829f464d93ae92b74f31ce7
+      internalID: 1089339023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_30
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 1390
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01e452c151d5f1142892d689da003a2f
+      internalID: -2115153654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_31
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 1390
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d844114d5a463e64f93167701d555083
+      internalID: -1664734602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_32
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 1150
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cac5abaa738352546a28836088b7b359
+      internalID: 1080588573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_33
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 1150
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c95d4d220334014494a249a02f4a170
+      internalID: 1193364572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_34
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 1150
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81c9e202e7476c74085ce54237af0472
+      internalID: -1650473019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_35
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 1150
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a610b2e6fcf60c46a78fa8f08034335
+      internalID: -1971122263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_36
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 1150
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d250bba4cb0d3a47a27ef9cd38cb52b
+      internalID: 708350855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_37
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 1150
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc015016878a27240b9d4b46d3f0ac48
+      internalID: -252230018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_38
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 1150
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa3a877c4f94a9e42912c002910e98ec
+      internalID: 373566204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_39
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 1150
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4c026cb9bdd57c48924c7f7f5eeedee
+      internalID: 1614206705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_40
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 910
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 845bd3ae9cedf464f8a39a51a0211e6a
+      internalID: 382664304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_41
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 910
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cac000ff5d1d3e543a12aa7074444466
+      internalID: -21096775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_42
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 910
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94f916bacb41e184bad11b1abff429c0
+      internalID: -1572834627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_43
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 910
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68fb7b3094dc3c4429fc5b62a5bc9e9b
+      internalID: 981065199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_44
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 910
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38eed13ec0e6eb04f84bba4943551dbc
+      internalID: -1361642604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_45
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 910
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55c1759fef411d247b3c6088b49850ca
+      internalID: -2091745521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_46
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 910
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b69f71077a820c45a6a4d76a106bfd2
+      internalID: -1273211039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_47
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 910
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d0d15eed327ddd46a2e14cb9605a0b1
+      internalID: -1037006514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_48
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 670
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4722944400a567e4784a734699fe1903
+      internalID: -1855165714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_49
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 670
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88c88fb598e9e8447aadd7d8e0b46f11
+      internalID: -915837364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_50
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 670
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee16a6c78357ae74db440f2a52a10437
+      internalID: -1883313078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_51
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 670
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d473523dfdc4c2d48bb287d5194c4353
+      internalID: -1440855457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_52
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 670
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1136a3670946a024d9d36875b67e6734
+      internalID: -1194967665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_53
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 670
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ee1a346ba311af4eb63fd166b004404
+      internalID: 248232331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_54
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 670
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e80fce31d7bdb1c45bf85f1419df19c5
+      internalID: -2036437469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_55
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 670
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0269b744d8c97fa4ca03d195c3412851
+      internalID: -429396835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_56
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 430
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcfbd03c972c8914c8cd324dc1803024
+      internalID: -919287530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_57
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 430
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8dab8787cbbf454dbac6fa52ad7ce80
+      internalID: -894830377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_58
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 430
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef3fe9cf96e67554589a8cb66ce5c880
+      internalID: -805109688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_59
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 430
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e95f8d2a0b2e39543b56ac79eb5702e1
+      internalID: -1492386793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_60
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 430
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc9c3d2336050414bb6421b92b6355ec
+      internalID: 322587223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_61
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 430
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25c247bd0828d8646b9467029eb3ffd2
+      internalID: -555041811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_62
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 430
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fbf9e0683371c141b322860e0be8842
+      internalID: 1683740349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_63
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 430
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d9e45f390a9ca640960a984c5d4982c
+      internalID: -833099560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_64
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 190
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99d7e4412612d2441b6e585cf0308e1c
+      internalID: -1580985011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_65
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 190
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67ca1afd10ee2674894b7b002ec42fc6
+      internalID: -1966366835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_66
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 190
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd6377a6c23fa1442a9d99f5d1a8f177
+      internalID: -1454385152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_67
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 190
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dd729554a5a5d94a92692a16208125e
+      internalID: -1382062867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_68
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 190
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3219656c0750d4149995ba673a9d4f4f
+      internalID: 229228041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_69
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 190
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32f8acaba948c084bb4c71056e06e25d
+      internalID: 337318652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_70
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 190
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aa51d8b984985d438546b281c3b521b
+      internalID: -303092129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_painting_back_71
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 190
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2af8a133ed23184abcf35074d84f2ce
+      internalID: 43606239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Wall_painting_back_0: 1954126384
+      Wall_painting_back_1: -1896909339
+      Wall_painting_back_10: -1885183418
+      Wall_painting_back_11: 85673991
+      Wall_painting_back_12: -1758538994
+      Wall_painting_back_13: 1953083313
+      Wall_painting_back_14: 1675052984
+      Wall_painting_back_15: 1717872821
+      Wall_painting_back_16: 1867773861
+      Wall_painting_back_17: 271185756
+      Wall_painting_back_18: -1496092003
+      Wall_painting_back_19: -706815463
+      Wall_painting_back_2: 1557725846
+      Wall_painting_back_20: 1212782470
+      Wall_painting_back_21: -1149976499
+      Wall_painting_back_22: 2080953766
+      Wall_painting_back_23: -1869723471
+      Wall_painting_back_24: 408356682
+      Wall_painting_back_25: -1861261398
+      Wall_painting_back_26: -1004407050
+      Wall_painting_back_27: -711126659
+      Wall_painting_back_28: 95360444
+      Wall_painting_back_29: 1089339023
+      Wall_painting_back_3: 664200249
+      Wall_painting_back_30: -2115153654
+      Wall_painting_back_31: -1664734602
+      Wall_painting_back_32: 1080588573
+      Wall_painting_back_33: 1193364572
+      Wall_painting_back_34: -1650473019
+      Wall_painting_back_35: -1971122263
+      Wall_painting_back_36: 708350855
+      Wall_painting_back_37: -252230018
+      Wall_painting_back_38: 373566204
+      Wall_painting_back_39: 1614206705
+      Wall_painting_back_4: 1592721038
+      Wall_painting_back_40: 382664304
+      Wall_painting_back_41: -21096775
+      Wall_painting_back_42: -1572834627
+      Wall_painting_back_43: 981065199
+      Wall_painting_back_44: -1361642604
+      Wall_painting_back_45: -2091745521
+      Wall_painting_back_46: -1273211039
+      Wall_painting_back_47: -1037006514
+      Wall_painting_back_48: -1855165714
+      Wall_painting_back_49: -915837364
+      Wall_painting_back_5: 817636667
+      Wall_painting_back_50: -1883313078
+      Wall_painting_back_51: -1440855457
+      Wall_painting_back_52: -1194967665
+      Wall_painting_back_53: 248232331
+      Wall_painting_back_54: -2036437469
+      Wall_painting_back_55: -429396835
+      Wall_painting_back_56: -919287530
+      Wall_painting_back_57: -894830377
+      Wall_painting_back_58: -805109688
+      Wall_painting_back_59: -1492386793
+      Wall_painting_back_6: 21500054
+      Wall_painting_back_60: 322587223
+      Wall_painting_back_61: -555041811
+      Wall_painting_back_62: 1683740349
+      Wall_painting_back_63: -833099560
+      Wall_painting_back_64: -1580985011
+      Wall_painting_back_65: -1966366835
+      Wall_painting_back_66: -1454385152
+      Wall_painting_back_67: -1382062867
+      Wall_painting_back_68: 229228041
+      Wall_painting_back_69: 337318652
+      Wall_painting_back_7: -802050384
+      Wall_painting_back_70: -303092129
+      Wall_painting_back_71: 43606239
+      Wall_painting_back_8: 1928917487
+      Wall_painting_back_9: -1375358372
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
