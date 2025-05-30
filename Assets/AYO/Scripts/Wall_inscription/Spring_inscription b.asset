@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbbcc9d28463bd44e8060246e223596c, type: 3}
+  m_Name: Spring_inscription b
+  m_EditorClassIdentifier: 
+  objectName: 
+  description: "\uBB34\uC5B8\uAC00 \uBFCC\uB9AC\uB294 \uB4EF\uD55C \uC190 \uB3D9\uC791\uC758
+    \uBAA8\uC2B5\uC774\uB2E4.\n\uC660\uC9C0 \uB18D\uBD80\uC758 \uBAA8\uC2B5\uC73C\uB85C
+    \uBCF4\uC778\uB2E4."
