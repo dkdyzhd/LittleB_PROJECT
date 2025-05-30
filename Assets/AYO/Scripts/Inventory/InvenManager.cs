@@ -12,6 +12,9 @@ namespace AYO
         
         [SerializeField] private InventoryUI invenUI;
 
+        [SerializeField] private AudioSource audioSource;   // 휘익
+        [SerializeField] private AudioClip itemAcquire;
+
         // 아이템이 있는지 확인
         public bool HasItem(ItemData item, int quantity)
         {
@@ -26,6 +29,19 @@ namespace AYO
                 }
             }
             return false;
+        }
+
+        //특정 아이템이 있지 않을 때 by 휘익 250528
+        public bool NotHasItem(ItemData item)
+        {
+            foreach (SlotData slotData in slotDataList)
+            {
+                if (slotData.GetItemData() == item)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         // 스택이 가능한 같은 아이템을 가지고 있다면 그 인덱스를 반환
@@ -81,6 +97,7 @@ namespace AYO
             slotDataList.Add(slotdata);
             Debug.Log($" 새 아이템 추가: {item.ItemData.itemName}, 개수: 1");
 
+            audioSource.PlayOneShot(itemAcquire);   // 휘익
             //slotDataList[i].SetSlotItemData(itemData);
             //slotDataList[i].SetSlotItemCount(1);
             invenUI.RefreshUI(slotDataList);

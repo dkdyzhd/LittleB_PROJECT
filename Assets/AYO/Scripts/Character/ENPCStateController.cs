@@ -24,6 +24,14 @@ namespace AYO
         private ENPCAIState enpcAIState;
         private Animator anim;
 
+        //Sound 관련 변수들 by 휘익 250528
+        [Header("사운드 설정")]
+        /*[SerializeField] private string attackSFXName = "Enemy_Attack"; // SFXLibrary에 등록된 공격 사운드 이름
+        [SerializeField] private float attackSFXVolumeScale = 1.0f;
+        [SerializeField] private bool useAttackSFX = true; // 공격 사운드 사용 여부*/
+        [SerializeField] AudioSource audioSource;
+        [SerializeField] AudioClip attackSound;
+
         // Patrol 에 필요한 변수들
         private Vector3 basePos;    // ENPC의 기본 위치
         private Vector3 targetPos;  // 목표 좌표 저장
@@ -48,7 +56,9 @@ namespace AYO
         {
             anim = GetComponent<Animator>();
             waitTime = Random.Range(2, 3);
-            
+
+            audioSource = GetComponent<AudioSource>();  //휘익
+
             SetAIState(ENPCAIState.AI_Patrol);
             isAttacking = false;
         }
@@ -235,6 +245,11 @@ namespace AYO
         {
             maxHp -= damage;
             Debug.Log($"ENPC Hp : " + maxHp);
+        }
+
+        public void PlayAttackSFX() // by 휘익 250528
+        {
+            audioSource.PlayOneShot(attackSound);
         }
     }
 }

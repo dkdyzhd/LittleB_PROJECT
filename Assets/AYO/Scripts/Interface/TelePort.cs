@@ -9,9 +9,10 @@ namespace AYO
         [Header("Teleport Settings")]
         [SerializeField] private Transform teleportOutput;
 
-        [SerializeField] private int delay = 1;// 텔레포트 출력 위치
+        [SerializeField] private float delay = 1f;// 텔레포트 출력 위치
 
-        private Camera mainCamera;
+        //private Camera mainCamera;
+        [SerializeField] private ScreenFader screenFader;
         private PlayerController playerController;
         private bool isTeleporting = false;
         private float teleportStartTime = 0f;
@@ -19,14 +20,18 @@ namespace AYO
         private float teleportadjusted = 0.5f;
         private void Start()
         {
-            mainCamera = Camera.main;
+            //mainCamera = Camera.main;
             playerController = FindObjectOfType<PlayerController>();
+            screenFader = FindObjectOfType<ScreenFader>();
 
-            if (mainCamera == null)
-                Debug.LogError("메인 카메라가 없습니다!");
+            /*if (mainCamera == null)
+                Debug.LogError("메인 카메라가 없습니다!");*/
 
             if (playerController == null)
                 Debug.LogError("PlayerController가 없습니다!");
+
+            if (screenFader == null)
+                Debug.LogError("?");
         }
 
         private void Update()
@@ -35,32 +40,47 @@ namespace AYO
             {
                 float elapsedTime = Time.time - teleportStartTime;
 
-                if (elapsedTime >= delay)
+                if (elapsedTime >= delay / 2f)
                 {
 
                     playerController.transform.position = new Vector3(teleportOutput.position.x, teleportOutput.position.y - teleportadjusted, teleportOutput.position.z);
 
+                }
 
-                   mainCamera.cullingMask = -1; 
+                if (elapsedTime >= delay)
+                {
+                    //mainCamera.cullingMask = -1;
 
-                 
+                    if (screenFader != null)
+                    {
+                        screenFader.ScreenFadeIn();
+                        Debug.Log("!");
+                    }
+
                     playerController.enabled = true;
 
-           
+
                     isTeleporting = false;
                 }
+
             }
         }
         public void OnInteract()
         {
             if (teleportOutput != null)
             {
-               
+
                 isTeleporting = true;
                 teleportStartTime = Time.time;
                 playerController.enabled = false;
- 
-               mainCamera.cullingMask = 0; // Nothing
+
+                //mainCamera.cullingMask = 0; // Nothing
+                if (screenFader != null)
+                {
+                    screenFader.ScreenFadeOut();
+                    Debug.Log("?");
+                }
+
             }
             else if (isTeleporting)
             {

@@ -24,6 +24,10 @@ namespace AYO
         private SpeakingArray currentSpeakingArray;
         private List<string> lines;
 
+        public bool IsCurrentlyActive { get; private set; } // 외부에서 읽기 전용 by 휘익 250521
+        public bool IsDialogueAndEventsFullyCompleted { get; private set; } // 후속 이벤트까지 끝났는지 여부 플래그 by 휘익 250521
+
+
         private void Start()
         {
             dialogueUI.SetActive(false);
@@ -33,9 +37,13 @@ namespace AYO
         public void ShowDialogue(SpeakingArray speakingArray)
         {
             pInputManager.NavigateTarget = null;
+            player.SetControl(false); // by 휘익 250526
 
             currentSpeakingArray = speakingArray;
             dialogueUI.SetActive(true);
+
+            IsDialogueAndEventsFullyCompleted = false; // 대화 시작 시 초기화 by 휘익 250521
+            IsCurrentlyActive = true; // 대화 시작 시 true by 휘익 250521
 
             ShowDialogue();
         }
@@ -76,9 +84,15 @@ namespace AYO
                 {
                     j = 0;
                     dialogueUI.SetActive(false);
+                    IsCurrentlyActive = false; // 정상 종료 시 false by 휘익 250521
 
                     // 다음 이벤트 호출하면서  대화 종료
                     currentSpeakingArray.InvokeNextEvent();
+
+                    // InvokeNextEvent 후 모든 것이 완료되었음을 알림 by 휘익 250521
+                    IsDialogueAndEventsFullyCompleted = true;
+                    Debug.Log("DialManager: Dialogue UI closed and NextEvent invoked. Fully completed.");
+
                     return;
                 }
 
@@ -92,7 +106,27 @@ namespace AYO
         {
             dialogueUI.SetActive(false);
 
-            pInputManager.NavigateTarget = player;
+            IsCurrentlyActive = false; // 외부 호출로 종료 시 false by 휘익 250521
+            IsDialogueAndEventsFullyCompleted = true; // 강제 종료 시에도 완료로 간주 by 휘익 250521
+
+            if (pInputManager == null)
+            {
+                Debug.LogError("pInputManager IS NULL!");
+            }
+            else
+            {
+                pInputManager.NavigateTarget = player;
+            }
+
+            // 3. player.SetControl(true) 호출 직전 player 상태 확인
+            if (player == null)
+            {
+                Debug.LogError("Player IS NULL before calling SetControl(true)!");
+            }
+            else
+            {
+                player.SetControl(true); // 이 라인이 실행되면 PlayerController의 로그가 떠야 함
+            }
         }
 
         public void Escape()

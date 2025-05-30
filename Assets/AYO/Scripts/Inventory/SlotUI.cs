@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UltEvents;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,7 +11,14 @@ namespace AYO
     {
         [SerializeField] private Image itemImage;                        // 아이템 이미지
         [SerializeField] private TMPro.TextMeshProUGUI countText;        // 아이템 갯수
+        [SerializeField] private Button button;
         private ItemData currentItem;                   // 받아올 아이템 저장
+
+        public int GetButtonIndex(UltEvent buttonEvent)
+        {
+            button.onClick.AddListener(() => buttonEvent.Invoke());
+            return 1;
+        }
 
         public ItemData Item
         {
