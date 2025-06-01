@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 8800x2160_backgroundforest_1_1_8
+  m_Name: 8800x2160_backgroundforest_1_1_8(1)
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: -963836069, guid: 6a6c2dcea3850b84fb7c667a1ffa4874, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

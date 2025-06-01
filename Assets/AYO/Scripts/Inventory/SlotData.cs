@@ -31,6 +31,10 @@ namespace AYO
         {
             
         }
+        public InteractionItem GetItem()
+        {
+            return item;
+        }
         public ItemData GetItemData()
         {
             return item.ItemData;

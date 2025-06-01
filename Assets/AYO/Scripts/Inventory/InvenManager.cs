@@ -9,8 +9,11 @@ namespace AYO
     {
         private List<SlotData> slotDataList = new List<SlotData>();
         //private SlotData[] slotDataList = new SlotData[48];
-        
+
+        [SerializeField] private PlayerController player;
         [SerializeField] private InventoryUI invenUI;
+        [SerializeField] GameObject inventoryUI;
+        [SerializeField] private PlayerInputEventManager pInputManager;
 
         [SerializeField] private AudioSource audioSource;   // 휘익
         [SerializeField] private AudioClip itemAcquire;
@@ -120,6 +123,26 @@ namespace AYO
             }
 
             invenUI.RefreshUI(slotDataList);
+        }
+        // 슬롯을 선택했을 때 아이템의 onUse 실행
+        public void SelectSlot(int index)
+        {
+            //slotDataList[index].GetItem().Use(player);
+            slotDataList[index].GetItem().TestItemUSe();
+        }
+
+        public void OnInventoryBag()
+        {
+            if (inventoryUI.activeInHierarchy)
+            {
+                inventoryUI.SetActive(false);
+                pInputManager.LeftClickTarget = player;
+            }
+            else
+            {
+                inventoryUI.SetActive(true);
+                pInputManager.LeftClickTarget = null;
+            }
         }
     }
 }

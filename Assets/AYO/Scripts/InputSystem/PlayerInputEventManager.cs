@@ -11,6 +11,7 @@ namespace AYO
     {
         public INavigateInputTarget NavigateTarget { set; get; }
         public ILeftMouseButtonTarget LeftClickTarget { set; get; }
+        public IOnInventoryTarget OnInventoryTarget { set; get; }
 
         public void OnNavigate(InputAction.CallbackContext context)
         {
@@ -24,6 +25,13 @@ namespace AYO
             if (LeftClickTarget != null)
             {
                 LeftClickTarget.OnLeftClick(context);
+            }
+        }
+        public void OnInventory(InputAction.CallbackContext context)
+        {
+            if(OnInventoryTarget != null)
+            {
+                OnInventoryTarget.OnInventory(context);
             }
         }
     }

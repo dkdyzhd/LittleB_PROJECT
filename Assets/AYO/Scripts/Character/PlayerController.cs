@@ -6,7 +6,7 @@ using UnityEngine.Windows;
 
 namespace AYO
 {
-    public class PlayerController : MonoBehaviour, INavigateInputTarget, ILeftMouseButtonTarget
+    public class PlayerController : MonoBehaviour, INavigateInputTarget, ILeftMouseButtonTarget, IOnInventoryTarget
     {
         [Header("플레이어 HP")]
         [SerializeField] private int playerHP;
@@ -34,6 +34,9 @@ namespace AYO
 
         [Header("입력매니저")]
         [SerializeField] private PlayerInputEventManager pInputManager;
+
+        [Header("인벤토리매니저")]
+        [SerializeField] private InvenManager invenManager;
 
         [Header("Skill")]
         [SerializeField] private SlingShotSkill skill;
@@ -65,6 +68,7 @@ namespace AYO
             {
                 pInputManager.NavigateTarget = this;
                 pInputManager.LeftClickTarget = this;
+                pInputManager.OnInventoryTarget = this;
             }
             
         }
@@ -329,6 +333,15 @@ namespace AYO
             Debug.Log($"현재 HP : " + playerHP);
         }
 
+        public void OnInventory(UnityEngine.InputSystem.InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                Debug.Log("인벤토리토글 눌림");
+                invenManager.OnInventoryBag();
+            }
+        }
+
         public void OnLeftClick(UnityEngine.InputSystem.InputAction.CallbackContext context)
         {
             if(context.performed && isGrounded && !isShooting)
@@ -345,9 +358,13 @@ namespace AYO
             skill.Shoot(bulletDir);
         }
 
+        // 상호작용 아이템 condition용 함수
         public bool IsObjectNear(GameObject requireObj)
         {
             //playerInteractableCollider.gameObject   => 게임오브젝트를 가져와서 비교할 것 !
+            if(requireObj == null) return false;
+            if(playerInteractableCollider == null) return false;
+
             for (int i = 0; i < playerInteractableCollider.Length; i++)
             {
                 if (playerInteractableCollider[i].gameObject == requireObj)
@@ -387,5 +404,7 @@ namespace AYO
             }
             Debug.Log($"PlayerController : Controll set to {enabled}");
         }
+
+        
     }
 }

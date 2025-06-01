@@ -12,23 +12,33 @@ namespace AYO
         [SerializeField] private Image itemImage;                        // 아이템 이미지
         [SerializeField] private TMPro.TextMeshProUGUI countText;        // 아이템 갯수
         [SerializeField] private Button button;
-        private ItemData currentItem;                   // 받아올 아이템 저장
+        //private ItemData currentItem;                   // 받아올 아이템 저장
+        private InteractionItem currentInteractionItem;
+        private InvenManager invenManager;
+        private int index;
 
-        public int GetButtonIndex(UltEvent buttonEvent)
+        public void SetSlotIndex(int i, InvenManager manager)
         {
-            button.onClick.AddListener(() => buttonEvent.Invoke());
-            return 1;
+            index = i;
+            invenManager = manager;
+
+            button.onClick.RemoveAllListeners();  // 중복 방지
+            button.onClick.AddListener(OnClickSlot);
+        }
+        public void OnClickSlot()
+        {
+            invenManager.SelectSlot(index);
         }
 
-        public ItemData Item
+        public InteractionItem InterItem
         {
-            get { return currentItem; }
+            get { return currentInteractionItem; }
             set
             {
-                currentItem = value;        // 아이템 받아오기
-                if (currentItem != null )
+                currentInteractionItem = value;     // 아이템 받아오기
+                if (currentInteractionItem != null)
                 {
-                    itemImage.sprite = Item.itemIcon;
+                    itemImage.sprite = InterItem.ItemData.itemIcon;
                 }
                 else
                 {
@@ -37,13 +47,12 @@ namespace AYO
                 }
             }
         }
-
         public int Count
         {
             set
             {
 
-                if(value > 1)
+                if (value > 1)
                 {   // 1 보다 크면 값을 string으로 변환
                     countText.text = value.ToString();
                 }
@@ -53,5 +62,25 @@ namespace AYO
                 }
             }
         }
+
+        //public ItemData Item
+        //{
+        //    get { return currentItem; }
+        //    set
+        //    {
+        //        currentItem = value;        // 아이템 받아오기
+        //        if (currentItem != null )
+        //        {
+        //            itemImage.sprite = Item.itemIcon;
+        //        }
+        //        else
+        //        {
+        //            itemImage.sprite = null;
+        //            countText.text = string.Empty;
+        //        }
+        //    }
+        //}
+
+
     }
 }

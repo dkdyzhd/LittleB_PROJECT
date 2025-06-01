@@ -22,5 +22,10 @@ namespace AYO
         {
             void OnLeftClick(InputAction.CallbackContext context);
         }
+
+        public interface IOnInventoryTarget // i Ű
+        {
+            void OnInventory(InputAction.CallbackContext context);
+        }
     }
 }

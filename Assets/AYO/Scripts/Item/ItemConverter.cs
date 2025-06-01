@@ -32,7 +32,17 @@ namespace AYO
                     Debug.Log("재료 차감!");
                 }
 
-                string prefabPath = $"Prefab/Item/{recipe.outputItem.dataName}";
+                InteractionItem script = GetComponentInChildren<InteractionItem>(true);
+                if (script != null)
+                {
+                    Debug.Log("스크립트 참조 성공!");
+                    invenManager.AddItem(script);
+                }
+                else
+                {
+                    Debug.LogWarning("해당 프리팹에 Script가 없음");
+                }
+                /*string prefabPath = $"Prefab/Item/{recipe.outputItem.dataName}";
                 GameObject prefab = Resources.Load<GameObject>(prefabPath);
                 if (prefab != null)
                 {
@@ -54,7 +64,7 @@ namespace AYO
                 else
                 {
                     Debug.LogError($"프리팹을 찾을 수 없음: {prefabPath}");
-                }
+                }*/
                 Debug.Log("완성 아이템 추가 완료!");
             }
         }
