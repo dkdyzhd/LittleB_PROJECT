@@ -367,6 +367,8 @@ namespace AYO
 
             for (int i = 0; i < playerInteractableCollider.Length; i++)
             {
+                //콜라이더 == 널이면 브레이크
+                if (playerInteractableCollider[i] == null) break;
                 if (playerInteractableCollider[i].gameObject == requireObj)
                 {
                     return true;

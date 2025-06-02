@@ -39,11 +39,13 @@ namespace AYO
                 if (currentInteractionItem != null)
                 {
                     itemImage.sprite = InterItem.ItemData.itemIcon;
+                    itemImage.color =  new Color(1, 1, 1, 1);
                 }
                 else
                 {
                     itemImage.sprite = null;
                     countText.text = string.Empty;
+                    itemImage.color = new Color(1, 1, 1, 0);
                 }
             }
         }
