@@ -22,6 +22,7 @@ namespace AYO
             {
                 isDamageActive = true;
                 playerCtrler = collision.GetComponent<PlayerController>();
+
                 contactVec = (playerCtrler.transform.position - skill.transform.position).normalized ;
 
                 skill.Attack(playerCtrler, contactVec);

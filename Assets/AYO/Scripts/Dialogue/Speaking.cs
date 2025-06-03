@@ -94,5 +94,9 @@ namespace AYO
         {
             return id;
         }
+        public CharacterData GetCharacterData()
+        {
+            return characterData;
+        }
     }
 }

@@ -15,6 +15,7 @@ namespace AYO
         [SerializeField] private GameObject dialogueUI;
         [SerializeField] private Text dialogueLine;
         [SerializeField] private Image characterImage;
+        [SerializeField] private DialogueUI dialogueui; // DialogueUI.cs 레퍼런스
 
         //[SerializeField] private Speaking speaking;
 
@@ -23,6 +24,7 @@ namespace AYO
         private Speaking currentSpeaking;
         private SpeakingArray currentSpeakingArray;
         private List<string> lines;
+        private CharacterData currentCharData; // 현재 진행중인 Speaking의 캐릭터 데이터
 
         public bool IsCurrentlyActive { get; private set; } // 외부에서 읽기 전용 by 휘익 250521
         public bool IsDialogueAndEventsFullyCompleted { get; private set; } // 후속 이벤트까지 끝났는지 여부 플래그 by 휘익 250521
@@ -37,6 +39,8 @@ namespace AYO
         public void ShowDialogue(SpeakingArray speakingArray)
         {
             pInputManager.NavigateTarget = null;
+            pInputManager.LeftClickTarget = null;
+            pInputManager.OnInventoryTarget = null;
             player.SetControl(false); // by 휘익 250526
 
             currentSpeakingArray = speakingArray;
@@ -60,7 +64,9 @@ namespace AYO
         public void ShowDialogue()
         {
             currentSpeaking = currentSpeakingArray.GetSpeaking(j);
+            currentCharData = currentSpeaking.GetCharacterData();
             lines = tableLoader.GetTextData(currentSpeaking.GetSpeakingID());
+            dialogueui.SetDialogueCharacter(currentCharData.characterSprite, currentCharData.characterName);
 
             dialogueLine.text = lines[i];
 
@@ -116,6 +122,8 @@ namespace AYO
             else
             {
                 pInputManager.NavigateTarget = player;
+                pInputManager.LeftClickTarget = player;
+                pInputManager.OnInventoryTarget = player;
             }
 
             // 3. player.SetControl(true) 호출 직전 player 상태 확인

@@ -127,7 +127,11 @@ namespace AYO
         // 슬롯을 선택했을 때 아이템의 onUse 실행
         public void SelectSlot(int index)
         {
-            //slotDataList[index].GetItem().Use(player);
+            if (index < 0 || index >= slotDataList.Count)
+            {
+                Debug.LogWarning($"[SelectSlot] 잘못된 인덱스 접근: {index}");
+                return;
+            }
             slotDataList[index].GetItem().TestItemUSe();
         }
 

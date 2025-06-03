@@ -30,11 +30,16 @@ namespace AYO
 
         public void TestItemUSe()
         {
-            if (conditions == null) onUse.Invoke();
+            if (conditions == null)
+            {
+                onUse.Invoke();
+                invenManager.RemoveItem(itemData, 1);
+            }
 
             if (conditions.IsSatisfiedCondiotions())
             {
                 onUse.Invoke();
+                invenManager.RemoveItem(itemData, 1);
             }
             else
             {

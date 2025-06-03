@@ -23,6 +23,11 @@ namespace AYO
         [SerializeField] private GameObject player;
         private ENPCAIState enpcAIState;
         private Animator anim;
+        private PlayerController playerController;
+        private SpriteRenderer sr;
+        private bool isDead = false;
+        //투명해지는 속도
+        private float colorSpeed = 1f;
 
         //Sound 관련 변수들 by 휘익 250528
         [Header("사운드 설정")]
@@ -54,7 +59,9 @@ namespace AYO
 
         private void Start()
         {
+            playerController = player.GetComponent<PlayerController>();
             anim = GetComponent<Animator>();
+            sr = GetComponent<SpriteRenderer>();
             waitTime = Random.Range(2, 3);
 
             audioSource = GetComponent<AudioSource>();  //휘익
@@ -64,7 +71,27 @@ namespace AYO
         }
         private void Update()
         {
-            ENPCAI();
+            if(playerController.IsDead)
+            {
+                SetAIState(ENPCAIState.AI_Patrol);
+            }
+            if (!isDead)
+            {
+                ENPCAI();
+            }
+
+            else
+            {
+                //서서히 투명해지도록
+                sr.color = Vector4.Lerp(sr.color, new Vector4(1, 1, 1, 0), Time.deltaTime * colorSpeed);
+
+                //많이 투명해지면
+                if (sr.color.a <= 0.1f)
+                {
+                    //게임오브젝트 비활성화
+                    this.gameObject.SetActive(false);
+                }
+            }
         }
         public void SetAIState(ENPCAIState state)
         {
@@ -243,8 +270,19 @@ namespace AYO
 
         public void GetDamage(int damage)
         {
+            if (isDead) return;
             maxHp -= damage;
             Debug.Log($"ENPC Hp : " + maxHp);
+            if (maxHp <= 0)
+            {
+                Die();
+            }
+        }
+
+        public void Die()
+        {
+            isDead = true;
+            anim.SetTrigger("HyenaDead");
         }
 
         public void PlayAttackSFX() // by 휘익 250528

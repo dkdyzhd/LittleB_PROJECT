@@ -47,6 +47,9 @@ namespace AYO
         private bool reachedApex;
         private bool isKnockbacking;
         private bool canControl = true; // by 휘익 250526
+        private bool isDead = false;
+
+        public bool IsDead => isDead;
 
         [Header("Sprites")]
         [SerializeField] private Sprite defaultSprite;
@@ -327,10 +330,32 @@ namespace AYO
             }
         }
 
-        public void GetDamage(int life)
+        public void GetDamage(int amount)
         {
-            playerHP -= life;
+            if (isDead) return;
+            playerHP -= amount;
             Debug.Log($"현재 HP : " + playerHP);
+
+            if (playerHP <= 0)
+            {
+                Die();
+            }
+        }
+
+        public void Heal(int amount)
+        {
+            playerHP += amount;
+            playerHP = Mathf.Min(playerHP, 10);
+            Debug.Log($"회복됨! 현재 HP: {playerHP}");
+        }
+
+        private void Die()
+        {
+            isDead = true;
+            canControl = false;
+            ani.SetTrigger("Dead");
+            rb.velocity = Vector2.zero;
+            Debug.Log("플레이어 사망!");
         }
 
         public void OnInventory(UnityEngine.InputSystem.InputAction.CallbackContext context)

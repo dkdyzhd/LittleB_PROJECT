@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 789ef2e28886d904ea5d801cac3edd92, type: 3}
+  m_Name: BGMLibrary
+  m_EditorClassIdentifier: 
+  bgmList:
+  - bgmID: Title
+    audioClip: {fileID: 8300000, guid: 95d8532cd5f2e144fb5276bfdaf6ac0c, type: 3}
+    volumeScale: 1
+    specificFadeDuration: 0
+  - bgmID: KoshkaVillage
+    audioClip: {fileID: 8300000, guid: 7a637265b4bbb32479bc9051024fb38f, type: 3}
+    volumeScale: 1
+    specificFadeDuration: 0
+  - bgmID: WilderForest
+    audioClip: {fileID: 8300000, guid: c3b0403115bbf494a8a2e879122f183a, type: 3}
+    volumeScale: 1
+    specificFadeDuration: 0
+  - bgmID: WindSanctuary
+    audioClip: {fileID: 8300000, guid: 8d1d06c5596f0b3429787ece897a75cc, type: 3}
+    volumeScale: 1
+    specificFadeDuration: 0
+  - bgmID: Combat
+    audioClip: {fileID: 8300000, guid: b26487bba5c3c4f4894cbbcd17135267, type: 3}
+    volumeScale: 1
+    specificFadeDuration: 0
