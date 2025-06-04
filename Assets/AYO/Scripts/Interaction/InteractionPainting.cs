@@ -8,13 +8,18 @@ namespace AYO
     {
         [SerializeField] GameObject onPainting;
         [SerializeField] ScreenFader screenFader;
+        private float fadeTimer = 0.5f;
+        private bool on = false;
 
-
+        private void Update()
+        {
+            
+        }
         public void OnPainting()
         {
-            screenFader.ScreenFadeOut();
             onPainting.SetActive(true);
-            screenFader.ScreenFadeIn();
+            
+            screenFader.FadeOutToIn();
         }
 
     }

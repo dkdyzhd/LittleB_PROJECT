@@ -7,20 +7,31 @@ namespace AYO
     public class ENPCHitBoxColider : MonoBehaviour
     {
         [SerializeField] private KnifeSkill skill;
+        [SerializeField] private Collider2D hitCollider;
+        [SerializeField] private ContactFilter2D contactFilter;
         private PlayerController playerCtrler;
-        private bool isDamageActive;
+        private bool isAttacking;
         private Vector3 contactVec;
 
-        private void OnEnable()
+        private List<Collider2D> detectedColliders = new List<Collider2D>(); // 감지된 콜라이더들
+
+        private void FixedUpdate()
         {
-            isDamageActive = false;
+            if(isAttacking)
+            {
+                int count = hitCollider.OverlapCollider(contactFilter, detectedColliders);
+                for(int i = 0; i < count; i++)
+                {
+                    
+                }
+            }
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if(collision.gameObject.tag == "Player" && !isDamageActive)
+            if(collision.gameObject.tag == "Player" && !isAttacking)
             {
-                isDamageActive = true;
+                isAttacking = true;
                 playerCtrler = collision.GetComponent<PlayerController>();
 
                 contactVec = (playerCtrler.transform.position - skill.transform.position).normalized ;

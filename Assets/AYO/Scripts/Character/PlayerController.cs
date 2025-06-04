@@ -107,7 +107,7 @@ namespace AYO
             {
                 knockbackTimer -= Time.deltaTime;
 
-                if(knockbackTimer < 0)
+                if(knockbackTimer <= 0f)
                 {
                     isKnockbacking = false;
                 }

@@ -19,6 +19,11 @@ namespace AYO
         public void ScreenFadeOut()
         {
             animator.Play("FadeOut");
-        }        
+        }
+        
+        public void FadeOutToIn()
+        {
+            animator.Play("FadeOutToIn");
+        }
     }
 }
