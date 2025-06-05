@@ -28,7 +28,7 @@ namespace AYO
             gameObject.SetActive(false);
         }
 
-        public void TestItemUSe()
+        public void Use()
         {
             if (conditions == null)
             {

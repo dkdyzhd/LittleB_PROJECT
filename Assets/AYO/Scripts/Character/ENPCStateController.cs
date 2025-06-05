@@ -17,6 +17,8 @@ namespace AYO
         [SerializeField] private int maxHp;
         [SerializeField] private float moveSpeed;
 
+        [SerializeField] private ENPCHitBoxCollider collider;
+
         [Header("웨이포인트")]
         [SerializeField] private Transform[] wayPoint;
 
@@ -288,6 +290,16 @@ namespace AYO
         public void PlayAttackSFX() // by 휘익 250528
         {
             audioSource.PlayOneShot(attackSound);
+        }
+
+        private void ActivateHitBox()   // Animator
+        {
+            collider.StartAttack();
+        }
+
+        private void DeActivateHitBox() //Animator
+        {
+            collider.FinishAttack();
         }
     }
 }

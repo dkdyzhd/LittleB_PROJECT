@@ -73,7 +73,8 @@ namespace AYO
                 pInputManager.LeftClickTarget = this;
                 pInputManager.OnInventoryTarget = this;
             }
-            
+            Vector2 dir = transform.right;
+            bulletDir = dir.x;
         }
 
         private void Update()

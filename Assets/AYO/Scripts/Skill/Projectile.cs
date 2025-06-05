@@ -6,23 +6,28 @@ namespace AYO
 {
     public class Projectile : MonoBehaviour
     {
-        [SerializeField] private float speed;           // 날아가는 속도
+        [SerializeField] private float forcePower = 10f;      // 날아가는 속도
         [SerializeField] private float rigWeight;       // 중력 가중치
         [SerializeField] private float fireRange;       // 사정 거리..?
 
+        private Rigidbody2D rig;
         private ENPCStateController enpc;
         private float shootDir;
         private int damage;
 
+        private void Awake()
+        {
+            rig = GetComponent<Rigidbody2D>();
+        }
 
         private void Update()
         {
-            transform.Translate( new Vector2(shootDir, 0) * speed * Time.deltaTime);
+            //transform.Translate( new Vector2(shootDir, 0) * speed * Time.deltaTime);
         }
 
-        public void SetBulletDir(float bulletDir)
+        public void Fire(Vector2 dir)
         {
-            shootDir = bulletDir;
+            rig.AddForce(dir.normalized * forcePower, ForceMode2D.Impulse);
         }
 
         public void SetDamage(int skillDamage)

@@ -132,7 +132,7 @@ namespace AYO
                 Debug.LogWarning($"[SelectSlot] 잘못된 인덱스 접근: {index}");
                 return;
             }
-            slotDataList[index].GetItem().TestItemUSe();
+            slotDataList[index].GetItem().Use();
         }
 
         public void OnInventoryBag()

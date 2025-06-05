@@ -23,7 +23,7 @@ namespace AYO
         
         public void FadeOutToIn()
         {
-            animator.Play("FadeOutToIn");
+            animator.SetTrigger("FadeOutToIn");
         }
     }
 }
